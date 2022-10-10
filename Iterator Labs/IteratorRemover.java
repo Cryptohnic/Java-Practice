@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import static java.lang.System.*;
 
-public class IteratorRemover
-{
+public class IteratorRemover{
+
 	private ArrayList<String> list;
 	private String toRemove;
 
