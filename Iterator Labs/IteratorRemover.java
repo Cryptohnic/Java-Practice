@@ -4,7 +4,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import static java.lang.System.*;
 
 public class IteratorRemover{
 
@@ -28,6 +27,6 @@ public class IteratorRemover{
 	}
 
 	public String toString(){
-		return list.toString();
+		return list.toString()+"\n\n";
 	}
 }

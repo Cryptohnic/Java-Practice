@@ -1,28 +1,23 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name - 
 
-import static java.lang.System.*;
-
-public class StringSearch
-{
-	/*
-	 *method countWords will count the occurrences of word in sent
-	 *there may many occurrences of word or none at all
-	 */
-	public static int countWords(String sent, String word)
-	{
-		//add code here
-		return 0;
+public class StringSearch{
+	public static int countWords(String sent, String word){
+		int count=0;
+		for(int i=0;i<sent.length()-word.length()+1;i++){
+			if(sent.substring(i,i+word.length()).equals(word))
+				count++;
+		}
+		return count;
 	}
 
-	/*
-	 *method countLetters will count the occurrences of letter in sent
-	 *there may many occurrences of letter or none at all
-	 */
 	public static int countLetters(String sent, String letter)
 	{
-		//add code here
-		return 0;
+		int count=0;
+		for(char c:sent.toCharArray()){
+			if(c==letter.charAt(0))
+				count++;
+		}
+		return count;
 	}
 }
