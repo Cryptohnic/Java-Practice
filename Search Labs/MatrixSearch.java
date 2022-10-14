@@ -76,6 +76,5 @@ public class MatrixSearch
 		 *post - all values from mat are concatenated to a string and returned
 		 */
     public String toString(){
-		
     }
 }
