@@ -4,7 +4,7 @@
 import static java.lang.System.*;
 
 public class MatrixSearchRunner{
-    public static void main(String[] args)throws Exception{
+    public static void main(String[] args){
     	MatrixSearch ms = new MatrixSearch(20,20,25);
         out.println(ms);
         out.println("Odd count = "+ms.countOdds());

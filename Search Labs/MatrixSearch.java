@@ -4,7 +4,6 @@
 public class MatrixSearch
 {
     private int[][] mat;
-
 		/*
 		 *pre - mat is null
 		 *post - mat will be rows X cols
@@ -76,5 +75,29 @@ public class MatrixSearch
 		 *post - all values from mat are concatenated to a string and returned
 		 */
     public String toString(){
+		int max=0;
+		String str="";
+		for(int r=0;r<mat.length;r++)
+			for(int c=0;c<mat[r].length;c++)
+				if(mat[r][c]>max)
+					max=mat[r][c];
+		int spaces=String.valueOf(max).length();
+		for(int r=0;r<mat.length;r++){
+			String line="";
+			for(int c=0;c<mat[r].length;c++){
+				int tspaces=spaces;
+				int num=mat[r][c];
+				while(num/10>0){
+					tspaces--;
+					num/=10;
+				}
+				for(int i=1;i<tspaces;i++)
+					line+=" ";
+				line+=mat[r][c]+" ";
+			}
+			line.strip(); // Java is weird and doesn't get rid of leading white space when the first character is a number so can just use .strip()
+			str+=line+"\n";
+		}
+		return str.stripTrailing();
     }
 }
