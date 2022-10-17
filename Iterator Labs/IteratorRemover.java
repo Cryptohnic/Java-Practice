@@ -20,10 +20,9 @@ public class IteratorRemover{
 
 	public void remove(){
 		Iterator i=list.iterator();
-		while(i.hasNext()){
+		while(i.hasNext())
 			if(i.next().equals(toRemove))
 				i.remove();
-		}
 	}
 
 	public String toString(){

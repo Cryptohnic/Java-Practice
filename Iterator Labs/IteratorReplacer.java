@@ -21,10 +21,9 @@ public class IteratorReplacer
 
 	public void replace(){
 		ListIterator i=list.listIterator();
-		while(i.hasNext()){
+		while(i.hasNext())
 			if(i.next().equals(toRemove))
 				i.set(replaceWith);
-		}
 	}
 
 	public String toString(){
