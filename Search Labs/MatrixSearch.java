@@ -95,7 +95,7 @@ public class MatrixSearch
 					line+=" ";
 				line+=mat[r][c]+" ";
 			}
-			line.strip(); // Java is weird and doesn't get rid of leading white space when the first character is a number so can just use .strip()
+			line.strip(); // Java is weird and doesn't get rid of leading white space when the first real character is a digit so can use just .strip()
 			str+=line+"\n";
 		}
 		return str.stripTrailing();
