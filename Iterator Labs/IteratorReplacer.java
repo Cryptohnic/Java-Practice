@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ListIterator;
 
-public class IteratorReplacer
-{
+public class IteratorReplacer{
+	
 	private ArrayList<String> list;
 	private String toRemove, replaceWith;
 
-	public IteratorReplacer(String line, String rem, String rep){
+	public IteratorReplacer(String line,String rem,String rep){
 		list=new ArrayList<String>(Arrays.asList(line.split(" ")));
 		toRemove=rem;
 		replaceWith=rep;
 	}
 
-	// public void setEmAll(String line, String rem, String rep){
+	// public void setEmAll(String line,String rem,String rep){
 	// }
 
 	public void replace(){
-		ListIterator i=list.listIterator();
+		ListIterator<String> i=list.listIterator();
 		while(i.hasNext())
 			if(i.next().equals(toRemove))
 				i.set(replaceWith);
