@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//(c) A+ Computer Science  -  www.apluscompsci.com
 
 //define class Palin
 public class Palin{
