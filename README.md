@@ -1,2 +1,2 @@
 # Java-Data-Structures
-Java Data Structures Example Code From A+ Computer Science
+Java data structures example code from A+ Computer Science labs and other personal coding projects
