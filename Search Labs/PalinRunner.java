@@ -1,6 +1,6 @@
 //(c) A+ Computer Science  -  www.apluscompsci.com
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class PalinRunner{
 	public static void main(String args[]){

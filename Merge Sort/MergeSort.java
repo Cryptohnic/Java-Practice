@@ -7,6 +7,7 @@ public class MergeSort{
 		mergeSort(list);
 	}
 
+	// Splits the array into halves recursively
 	private static void mergeSort(Comparable[] list){
 		if(list.length<2)
 			return;
@@ -21,6 +22,7 @@ public class MergeSort{
 		merge(list,leftArr,rightArr);
 	}
 
+	// Merge the two halves together in order
 	private static void merge(Comparable[] list,Comparable[] left,Comparable[] right){
 		int i=0,j=0,k=0;
 		while(i<left.length && j<right.length){
