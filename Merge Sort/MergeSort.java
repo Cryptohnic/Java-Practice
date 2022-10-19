@@ -3,11 +3,11 @@ import java.util.Arrays;
 
 public class MergeSort{
 
-	public static void sort(Comparable<Integer>[] list){
+	public static void sort(Comparable[] list){
 		mergeSort(list);
 	}
 
-	private static void mergeSort(Comparable<Integer>[] list){
+	private static void mergeSort(Comparable[] list){
 		if(list.length<2)
 			return;
 		Comparable[] leftArr=new Comparable[list.length/2];
@@ -46,8 +46,8 @@ public class MergeSort{
 	}
 
 	public static void main(String[] args){
-		Comparable<Integer>[] arr=new Comparable[]{9,5,3,2};
-		out.println("Before: "+Arrays.toString(arr));
+		Comparable[] arr=new Comparable[]{9,5,3,2};
+		out.println("Before: "+Arrays.toString(arr)); 
 		MergeSort.sort(arr);
 		out.println("After: "+Arrays.toString(arr));
 		arr=new Comparable[]{19,52,3,2,7,21};
