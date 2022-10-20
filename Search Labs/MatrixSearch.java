@@ -87,11 +87,11 @@ public class MatrixSearch
 			for(int c=0;c<mat[r].length;c++){
 				int tspaces=spaces;
 				int num=mat[r][c];
-				while(num/10>0){
+				while(num>0){
 					tspaces--;
 					num/=10;
 				}
-				for(int i=1;i<tspaces;i++)
+				for(int i=0;i<tspaces;i++)
 					line+=" ";
 				line+=mat[r][c]+" ";
 			}
