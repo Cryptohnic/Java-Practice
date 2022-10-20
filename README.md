@@ -1,2 +1,2 @@
-# Java-Data-Structures
-Java data structures example code from A+ Computer Science labs and other personal coding projects
+# Java-Practice
+Java practice labs from A+ Computer Science and other coding projects.
