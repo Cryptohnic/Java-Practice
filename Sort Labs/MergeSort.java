@@ -22,7 +22,7 @@ public class MergeSort{
 	}
 
 	private static void merge(Comparable[] list, int front, int back){  //O(N)
-		Comparable<?>[] temp=new Comparable[back-front];
+		Comparable[] temp=new Comparable[back-front];
 		int i=front, j=(front+back)/2, k=0, mid=j;
 		while(i<mid && j<back){
 			if(list[i].compareTo(list[j])<0)
