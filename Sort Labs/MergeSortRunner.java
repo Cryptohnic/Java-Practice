@@ -6,6 +6,6 @@ public class MergeSortRunner{
 		out.println("\n\n");
 		MergeSort.mergeSort(new Comparable[]{19,52,3,2,7,21});
 		out.println("\n\n");
-		MergeSort.mergeSort(new Comparable[]{68, 66,11,2,42,31});
+		MergeSort.mergeSort(new Comparable[]{68,66,11,2,42,31});
 	}
 }
