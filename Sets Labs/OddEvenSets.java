@@ -27,6 +27,6 @@ public class OddEvenSets{
 	}
 
 	public String toString(){
-		return "ODDS : " + odds + "\nEVENS : " + evens + "\n\n";
+		return "ODDS : "+odds+"\nEVENS : "+evens+"\n\n";
 	}
 }
