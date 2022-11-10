@@ -6,7 +6,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class MathSetRunner{
 	public static void main(String args[]) throws IOException{
