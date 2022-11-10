@@ -10,7 +10,7 @@ public class IteratorRemover{
 	private ArrayList<String> list;
 	private String toRemove;
 
-	public IteratorRemover(String line, String rem){
+	public IteratorRemover(String line,String rem){
 		list=new ArrayList<String>(Arrays.asList(line.split(" ")));
 		toRemove=rem;
 	}

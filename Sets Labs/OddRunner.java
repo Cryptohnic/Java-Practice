@@ -7,7 +7,7 @@ import java.util.Scanner;
 import static java.lang.System.*;
 
 public class OddRunner{
-	public static void main( String args[] ) throws IOException{
+	public static void main(String args[])throws IOException{
 		Scanner s=new Scanner(new File("oddevent.dat"));
 		while(s.hasNext()){
 			String nums=s.nextLine();
