@@ -4,6 +4,7 @@ import static java.lang.System.out;
 import java.util.Arrays;		//use Arrays.toString() to help print out the array
 
 public class MergeSort{
+
 	private static int passCount;
 
 	public static void mergeSort(Comparable[] list){
@@ -13,7 +14,8 @@ public class MergeSort{
 
 	private static void mergeSort(Comparable[] list,int front,int back){  //O(log(N))
 		int mid=(front+back)/2;
-		if(mid==front) return;
+		if(mid==front) 
+			return;
 		mergeSort(list,front,mid);
 		mergeSort(list,mid,back);
 		merge(list,front,back);
