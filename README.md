@@ -1,2 +1,2 @@
-# Java-Data-Structures
-Java data structures practice through A+ Comp Sci problems
+# Java-Practice
+Java practice labs from A+ Computer Science and other coding projects.
