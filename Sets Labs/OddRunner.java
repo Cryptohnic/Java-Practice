@@ -11,7 +11,7 @@ public class OddRunner{
 		Scanner s=new Scanner(new File("oddevent.dat"));
 		while(s.hasNext()){
 			String nums=s.nextLine();
-			OddEvenSets o=new OddEvenSets(nums);
+			OddEvenSets o=new OddEvenSets(nums); // run each line of nums
 			out.println(o);
 		}
 	}

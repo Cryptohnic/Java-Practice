@@ -13,10 +13,10 @@ public class UniquesDupes{
 
 	public static Set<String> getDupes(String input){
 		Set<String> set=new HashSet<>();
-		Set<String> ans=new TreeSet<>();
+		Set<String> dupes=new TreeSet<>();
 		for(String s:input.split(" "))
-			if(!set.add(s))
-				ans.add(s);
-		return ans;
+			if(!set.add(s)) // adds everything to the set
+				dupes.add(s); // if it is already in the set, add it to dupes
+		return dupes;
 	}
 }
