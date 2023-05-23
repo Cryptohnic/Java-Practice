@@ -7,7 +7,7 @@ public class PalinRunner{
 		String[] words="dog dad racecar goofy madam alligator benjamin".split(" ");
 		for(String s : words){
 			Palin one=new Palin(s);
-			out.print(one.isPalin()?one+" is a palindrome.\n":one+" is not a palindrome.\n");
+			out.print(one.isPalin()?one+" is a palindrome.\n":one+" is not a palindrome.\n"); // Checks if each word is a palindrome
 		}
 	}
 }

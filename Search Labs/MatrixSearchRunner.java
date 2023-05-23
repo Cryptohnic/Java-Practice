@@ -5,7 +5,7 @@ import static java.lang.System.out;
 
 public class MatrixSearchRunner{
     public static void main(String[] args){
-    	MatrixSearch ms=new MatrixSearch(20,20,25);
+    	MatrixSearch ms=new MatrixSearch(20,20,25); // creates the matrix
         out.println(ms);
         out.println("Odd count = "+ms.countOdds());
         out.println("Even count = "+ms.countEvens());

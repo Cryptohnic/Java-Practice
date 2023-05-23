@@ -25,9 +25,9 @@ public class Palin{
 	//isPalin method - returns a boolean
 	public boolean isPalin(){
 		String reverse="";
-		for(char c:s.toCharArray())
+		for(char c : s.toCharArray())
 			reverse=c+reverse;
-		return s.equals(reverse);
+		return s.equals(reverse); // checks if string is the same forwards and backwards
 	}
 
 	//toString method - returns a String

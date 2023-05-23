@@ -13,7 +13,7 @@ public class MatrixSearch
 		mat=new int[rows][cols];
 		for(int r=0;r<rows;r++)
 			for(int c=0;c<cols;c++)
-				mat[r][c]=(int)(Math.random()*upper)+1;
+				mat[r][c]=(int)(Math.random()*upper)+1; // set each val in the matrix to a random [1-upper]
     }
 
 		/*
@@ -26,7 +26,7 @@ public class MatrixSearch
 		for(int[] r : mat)
 			for(int num : r)
 				if(num%2==1)
-					odds++;
+					odds++; // count odds
 		return odds;
     }
 
@@ -40,7 +40,7 @@ public class MatrixSearch
 		for(int[] r : mat)
 			for(int num : r)
 				if(num%2==0)
-					evens++;
+					evens++; // count evens
 		return evens;
     }
 
@@ -54,7 +54,7 @@ public class MatrixSearch
 		for(int[] r : mat)
 			for(int num : r)
 				if(isPrime(num))
-					primes++;
+					primes++; // count primes
 		return primes;
     }
 
@@ -68,7 +68,7 @@ public class MatrixSearch
 			return false;
 		for(int i=2;i<=Math.sqrt(num);i++)
 			if(num%i==0)
-				return false;
+				return false; // isn't prime
     	return true;
     }
 
@@ -81,15 +81,14 @@ public class MatrixSearch
 		String str="";
 		for(int[] r : mat)
 			for(int num : r)
-				if(num>max)
-					max=num;
-		int spaces=String.valueOf(max).length();
+				max=Math.max(max,num);
+		int spaces=String.valueOf(max).length(); // find number of spaces needed for formatting
 		for(int[] r : mat){
 			String line="";
 			for(int num : r)
-				line+=String.format("%"+spaces+"d ",num);
+				line+=String.format("%"+spaces+"d ",num); // adds the number with spaces if needed
 			str+=line+"\n";
 		}
-		return str.stripTrailing();
+		return str.stripTrailing(); // returns the ans with space trimmed off the end
     }
 }
