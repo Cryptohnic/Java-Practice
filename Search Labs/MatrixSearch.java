@@ -23,9 +23,9 @@ public class MatrixSearch
 		 */
     public int countOdds(){
 		int odds=0;
-		for(int r=0;r<mat.length;r++)
-			for(int c=0;c<mat[r].length;c++)
-				if(mat[r][c]%2==1)
+		for(int[] r : mat)
+			for(int num : r)
+				if(num%2==1)
 					odds++;
 		return odds;
     }
@@ -37,9 +37,9 @@ public class MatrixSearch
 		 */
     public int countEvens(){
 		int evens=0;
-		for(int r=0;r<mat.length;r++)
-			for(int c=0;c<mat[r].length;c++)
-				if(mat[r][c]%2==0)
+		for(int[] r : mat)
+			for(int num : r)
+				if(num%2==0)
 					evens++;
 		return evens;
     }
@@ -51,9 +51,9 @@ public class MatrixSearch
 		 */
     public int countPrimes(){
 		int primes=0;
-		for(int r=0;r<mat.length;r++)
-			for(int c=0;c<mat[r].length;c++)
-				if(isPrime(mat[r][c]))
+		for(int[] r : mat)
+			for(int num : r)
+				if(isPrime(num))
 					primes++;
 		return primes;
     }
@@ -64,7 +64,9 @@ public class MatrixSearch
 		 *post - true is returned if num is not divisble by any number between 2 and itself
 		 */
     private boolean isPrime(int num){
-		for(int i=2;i<num;i++)
+		if(num<=1)
+			return false;
+		for(int i=2;i<=Math.sqrt(num);i++)
 			if(num%i==0)
 				return false;
     	return true;
@@ -77,25 +79,15 @@ public class MatrixSearch
     public String toString(){
 		int max=0;
 		String str="";
-		for(int r=0;r<mat.length;r++)
-			for(int c=0;c<mat[r].length;c++)
-				if(mat[r][c]>max)
-					max=mat[r][c];
+		for(int[] r : mat)
+			for(int num : r)
+				if(num>max)
+					max=num;
 		int spaces=String.valueOf(max).length();
-		for(int r=0;r<mat.length;r++){
+		for(int[] r : mat){
 			String line="";
-			for(int c=0;c<mat[r].length;c++){
-				int tspaces=spaces;
-				int num=mat[r][c];
-				while(num>0){
-					tspaces--;
-					num/=10;
-				}
-				for(int i=0;i<tspaces;i++)
-					line+=" ";
-				line+=mat[r][c]+" ";
-			}
-			line.strip(); // Java is weird and doesn't get rid of leading white space when the first real character is a digit so can use just .strip()
+			for(int num : r)
+				line+=String.format("%"+spaces+"d ",num);
 			str+=line+"\n";
 		}
 		return str.stripTrailing();

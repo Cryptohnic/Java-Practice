@@ -15,9 +15,9 @@ public class MathSet{
 
 	public MathSet(String o,String t){
 		this();
-		for(String s:o.split(" "))
+		for(String s : o.split(" "))
 			one.add(Integer.valueOf(s));
-		for(String s:t.split(" "))
+		for(String s : t.split(" "))
 			two.add(Integer.valueOf(s));
 	}
 

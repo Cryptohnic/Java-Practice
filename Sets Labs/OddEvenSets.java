@@ -36,12 +36,14 @@ public class OddEvenSets{
 			int num=s.nextInt();
 			if(num>1){
 				int totDivisors=1;
+				double sqrt=Math.sqrt(num);
 				for(int i=2;i<=Math.sqrt(num);i++)
 					if(num%i==0){
 						totDivisors+=i;
-						if(Math.pow(i,2)!=num)
-							totDivisors+=num/i;
+						totDivisors+=num/i;
 					}
+					if(sqrt==Math.floor(sqrt))
+						totDivisors-=Math.sqrt(num);
 				if(totDivisors==num)
 					perfects.add(num);
 			}

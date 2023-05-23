@@ -11,7 +11,7 @@ public class IteratorRemover{
 	private String toRemove;
 
 	public IteratorRemover(String line,String rem){
-		list=new ArrayList<String>(Arrays.asList(line.split(" ")));
+		list=new ArrayList<String>(Arrays.asList(line.split(" "))); // Put the inputted line of text into the ArrayList
 		toRemove=rem;
 	}
 
@@ -19,13 +19,13 @@ public class IteratorRemover{
 	// }
 
 	public void remove(){
-		Iterator<String> i=list.iterator();
-		while(i.hasNext())
-			if(i.next().equals(toRemove))
+		Iterator<String> i=list.iterator(); // create an Iterator
+		while(i.hasNext()) // while there is a value left in the List
+			if(i.next().equals(toRemove)) // if we are at the value to remove
 				i.remove();
 	}
 
-	public String toString(){
+	public String toString(){  // returns the list
 		return list.toString()+"\n\n";
 	}
 }
