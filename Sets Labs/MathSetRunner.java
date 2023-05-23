@@ -14,7 +14,7 @@ public class MathSetRunner{
 		while(s.hasNext()){
 			String nums=s.nextLine();
 			String nums1=s.nextLine();
-			MathSet m=new MathSet(nums,nums1);
+			MathSet m=new MathSet(nums,nums1); // create a MathSet for each of the rows
 			out.println(m);
 		}
 	}

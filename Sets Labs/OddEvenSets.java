@@ -19,7 +19,7 @@ public class OddEvenSets{
 	public OddEvenSets(String line){
 		this();
 		Scanner s=new Scanner(line);
-		while(s.hasNext()){
+		while(s.hasNext()){ // fill the odd and even sets
 			int num=s.nextInt();
 			if(num%2!=0)
 				odds.add(num);
@@ -32,23 +32,27 @@ public class OddEvenSets{
 
 	private void PerfectSet(String line){
 		Scanner s=new Scanner(line);
-		while(s.hasNext()){
-			int num=s.nextInt();
+		iteratePerfects(evens);
+		iteratePerfects(odds);
+		s.close();
+	}
+
+	private void iteratePerfects(Set<Integer> set){
+		for(int num : set){
 			if(num>1){
 				int totDivisors=1;
 				double sqrt=Math.sqrt(num);
-				for(int i=2;i<=Math.sqrt(num);i++)
+				for(int i=2;i<=Math.sqrt(num);i++) // check all divisors leading up to sqrt inclusive
 					if(num%i==0){
 						totDivisors+=i;
 						totDivisors+=num/i;
 					}
-					if(sqrt==Math.floor(sqrt))
+					if(sqrt==Math.floor(sqrt)) // remove the sqrts duplicate if it was a perfect square
 						totDivisors-=Math.sqrt(num);
 				if(totDivisors==num)
-					perfects.add(num);
+					perfects.add(num); // add to perfects
 			}
 		}
-		s.close();
 	}
 
 	public String toString(){
