@@ -8,7 +8,7 @@ public class Words{
 	private Map<String,Integer> m;
 	
 	public Words(){
-		m=new HashMap<>();
+		m=new HashMap<>(); // demonstrates usage of a map
 		m.put("one",1);
 		m.put("two",2);
 		m.put("three",3);

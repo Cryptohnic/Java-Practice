@@ -8,7 +8,7 @@ public class IteratorReplacerRunner{
 		String sentence="a b c a b c";
 		String remove="a";
 		String replace="+";
-		IteratorReplacer i=new IteratorReplacer(sentence,remove,replace);
+		IteratorReplacer i=new IteratorReplacer(sentence,remove,replace); // create the ArrayList ready to remove
 		out.println(i);
 		i.replace();
 		out.println(i);

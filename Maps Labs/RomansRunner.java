@@ -5,10 +5,10 @@ import static java.lang.System.out;
 
 public class RomansRunner{
 	public static void main(String args[]){
-		Romans w = new Romans();
+		Romans w = new Romans(); // test the class
 		out.println(w.getNumber("V"));
 		out.println(w.getNumber("D"));
-		out.println(w.getNumber("M")+"\n");
+		out.println(w.getNumber("M"));
 		out.println(w.getTotal("V I I"));
 		out.println(w.getTotal("X X"));
 		out.println(w.getTotal("C D M"));

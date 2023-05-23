@@ -8,7 +8,7 @@ public class Romans{
 	private Map<String,Integer> m;
 	
 	public Romans(){
-		m = new HashMap<String, Integer>();
+		m = new HashMap<String, Integer>(); // create a map of keys and values. This wont be an accurate program for calculating roman numerals
 		m.put("I",1);
 		m.put("V", 5);
 		m.put("X", 10);
@@ -25,7 +25,7 @@ public class Romans{
 	public int getTotal(String s){
 		int tot=0;
 		for(String c:s.split(" "))
-			tot+=m.get(c);
+			tot+=getNumber(c);
 		return tot;
 	}
 }
