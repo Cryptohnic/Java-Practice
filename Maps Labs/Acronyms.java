@@ -45,6 +45,6 @@ public class Acronyms
 
 	public String toString()
 	{
-		return "==== MAP CONTENTS ====\n\n"+acronymTable.toString()+"\n\n";
+		return "====\tMAP CONTENTS\t====\n\n"+acronymTable.toString()+"\n\n";
 	}
 }

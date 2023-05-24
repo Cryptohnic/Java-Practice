@@ -20,9 +20,8 @@ public class AcroRunner
 			acronyms.putEntry(s.nextLine());
 		}
 		out.println(acronyms);
-		String replacedSentence="";
+		out.println("====\tREAD CONTENTS\t====\n");
 		while(s.hasNextLine())
-			replacedSentence+=acronyms.convert(s.nextLine())+"\n";
-		out.println("==== READ LINES ====\n\n"+replacedSentence);
+			out.println(acronyms.convert(s.nextLine()));
 	}
 }
