@@ -6,7 +6,6 @@
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Scanner;
-import static java.lang.System.*;
 
 public class SpanishToEnglish
 {
