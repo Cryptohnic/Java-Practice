@@ -1,0 +1,28 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+
+//Name -
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import static java.lang.System.*;
+
+public class AcroRunner
+{
+	public static void main( String args[] ) throws IOException
+	{
+		Acronyms acronyms=new Acronyms();
+		Scanner s=new Scanner(new File("acro.dat"));
+		int count=s.nextInt();
+		s.nextLine();
+		for(int i=0;i<count;i++){
+			acronyms.putEntry(s.nextLine());
+		}
+		out.println(acronyms);
+		String replacedSentence="";
+		while(s.hasNextLine())
+			replacedSentence+=acronyms.convert(s.nextLine())+"\n";
+		out.println("==== READ LINES ====\n\n"+replacedSentence);
+	}
+}
