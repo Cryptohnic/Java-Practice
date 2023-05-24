@@ -29,11 +29,11 @@ public class Acronyms
 		while(chop.hasNext()){
 			String word=chop.next();
 			String noPunct=word.replaceAll("\\p{Punct}","");
-			if(acronymTable.get(noPunct)!=null){
-				if(word==noPunct)
+			if(acronymTable.get(noPunct)!=null){ // check if we have the acronym stored
+				if(word==noPunct) // if the word doesn't have punctuation
 					output+=acronymTable.get(word)+" ";
 				else
-					output+=acronymTable.get(noPunct)+". ";
+					output+=acronymTable.get(noPunct)+". "; //  add the word with punctuation
 					
 			}
 			else

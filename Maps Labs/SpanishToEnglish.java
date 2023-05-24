@@ -29,12 +29,11 @@ public class SpanishToEnglish
 		while(chop.hasNext()){
 			String word=chop.next();
 			String noPunct=word.replaceAll("\\p{Punct}","");
-			if(pairs.get(noPunct)!=null){
+			if(pairs.get(noPunct)!=null){ // check if we have a translation available
 				if(word==noPunct)
 					output+=pairs.get(word)+" ";
 				else
 					output+=pairs.get(noPunct)+". ";
-					
 			}
 			else
 				output+=word+" ";

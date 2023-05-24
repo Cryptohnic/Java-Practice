@@ -21,9 +21,9 @@ public class Relatives
 	{
 		String[] personRelative = line.split(" ");
 		if(personRelative.length==2){		
-			if(map.get(personRelative[0])==null)
+			if(map.get(personRelative[0])==null) // if it doesn't exist yet, instantiate the TreeSet
 				map.put(personRelative[0],new TreeSet<>());
-			map.get(personRelative[0]).add(personRelative[1]);
+			map.get(personRelative[0]).add(personRelative[1]); // add the person to the TreeSet
 		}
 	}
 
@@ -37,7 +37,7 @@ public class Relatives
 	public String toString()
 	{
 		String output="";
-		for(Map.Entry<String,Set<String>> entry : map.entrySet())
+		for(Map.Entry<String,Set<String>> entry : map.entrySet()) // formatting
 			output+=entry.getKey()+" is related to "+entry.getValue().toString().replaceAll("[^\\w\\s]","")+"\n";
 		return output;
 	}

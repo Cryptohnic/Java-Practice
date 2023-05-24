@@ -8,16 +8,16 @@ public class Part implements Comparable<Part>
 	private String make, model, rest;
 	private int year;
 
-	public Part(String line) 
+	public Part(String line)
 	{
 		String[] list = line.split(" ");
 		make=list[list.length-3];
 		model=list[list.length-2];
 		year=Integer.parseInt(list[list.length-1]);
-		rest=list.length==6 ? list[0]+" "+list[1]+" "+list[2] : list[0]+" "+list[1];
+		rest=list.length==6 ? list[0]+" "+list[1]+" "+list[2] : list[0]+" "+list[1];  // set based on one or two words
 	}
 
-	//have to have compareTo if implements Comparable
+	// have to have compareTo if implements Comparable
 	public int compareTo(Part rhs)
 	{
 		if(make.equals(rhs.make)){

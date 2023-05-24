@@ -16,9 +16,8 @@ public class AcroRunner
 		Scanner s=new Scanner(new File("acro.dat"));
 		int count=s.nextInt();
 		s.nextLine();
-		for(int i=0;i<count;i++){
+		for(int i=0;i<count;i++)
 			acronyms.putEntry(s.nextLine());
-		}
 		out.println(acronyms);
 		out.println("====\tREAD CONTENTS\t====\n");
 		while(s.hasNextLine())

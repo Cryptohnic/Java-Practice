@@ -14,9 +14,8 @@ public class RelativesRunner
 	{
 		Scanner s=new Scanner(new File("relatives.dat"));
 		Relatives r=new Relatives();
-		while(s.hasNextLine()){
+		while(s.hasNextLine())
 			r.setPersonRelative(s.nextLine());
-		}	
-		System.out.println(r);
+		out.println(r);
 	}
 }

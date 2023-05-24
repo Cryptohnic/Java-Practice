@@ -30,7 +30,7 @@ public class PartList
 			while(file.hasNextLine()){
 				String line=file.nextLine();
 				Part p=new Part(line);
-				partsMap.put(p,partsMap.getOrDefault(p,0)+1);
+				partsMap.put(p,partsMap.getOrDefault(p,0)+1); // adds it to the map with val 1 or increments
 			}
 
 
@@ -57,7 +57,7 @@ public class PartList
 	public String toString()
 	{
 		String output="";
-		for(Map.Entry<Part,Integer> entry : partsMap.entrySet())
+		for(Map.Entry<Part,Integer> entry : partsMap.entrySet()) // formatting
 			output+=entry.getKey()+" - "+entry.getValue()+"\n";
 		return output;
 	}

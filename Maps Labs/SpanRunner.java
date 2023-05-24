@@ -16,9 +16,8 @@ public class SpanRunner
 		Scanner s=new Scanner(new File("spantoeng.dat"));
 		int count=s.nextInt();
 		s.nextLine();
-		for(int i=0;i<count;i++){
+		for(int i=0;i<count;i++)
 			spanishToEnglish.putEntry(s.nextLine());
-		}
 		out.println(spanishToEnglish);
 		while(s.hasNextLine())
 			out.println(spanishToEnglish.translate(s.nextLine()));
