@@ -7,13 +7,13 @@ public class MergeSort{
 
 	private static int passCount;
 
-	public static void mergeSort(Comparable[] list){  //O(Nlog(N))
+	public static <T extends Comparable<T>> void mergeSort(T[] list){  //O(Nlog(N))
 		out.println("pass 0 "+Arrays.toString(list));
 		passCount=1;
 		mergeSort(list,0,list.length);
 	}
 
-	private static void mergeSort(Comparable[] list,int front,int back){  //O(log(N))
+	private static <T extends Comparable<T>> void mergeSort(T[] list,int front,int back){  //O(log(N))
 		if(back-front==1) return;
 		int mid=(front+back)/2;
 		mergeSort(list,front,mid);
@@ -23,8 +23,9 @@ public class MergeSort{
 		passCount++;
 	}
 
-	private static void merge(Comparable[] list, int front, int back){  //O(N)
-		Comparable[] temp=new Comparable[back-front];
+	private static <T extends Comparable<T>> void merge(T[] list, int front, int back){  //O(N)
+		@SuppressWarnings("unchecked")
+		T[] temp=(T[]) new Comparable[back-front];
 		int i=front, mid=(front+back)/2, k=0, j=mid;
 		while(i<mid && j<back){
 			if(list[i].compareTo(list[j])<0)

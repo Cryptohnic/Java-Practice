@@ -5,13 +5,13 @@ public class SelectionSort{
 
 	private static int passCount;
 
-	public static void sort(Comparable[] list){ //O(N^2)
+	public static <T extends Comparable<T>> void sort(T[] list){ //O(N^2)
 		out.println("pass 0 "+Arrays.toString(list));
 		passCount=1;
 		sort(list,0,list.length);
 	}
 
-	private static void sort(Comparable[] list,int front,int back){ //O(N^2) 
+	private static <T extends Comparable<T>> void sort(T[] list,int front,int back){ //O(N^2) 
 		if(front==back) return;
 		boolean swapped=false;
 		int min=front;
@@ -21,7 +21,7 @@ public class SelectionSort{
 				min=j;
 			}
 		if(!swapped) return;
-		Comparable temp=list[front];
+		T temp=list[front];
 		list[front]=list[min];
 		list[min]=temp;
 		out.println("pass "+passCount+" "+Arrays.toString(list));
