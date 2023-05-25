@@ -3,8 +3,6 @@
 
 //Name -
 
-import static java.lang.System.*;
-
 public class BaseConversion
 {
 	private String number;
@@ -19,7 +17,6 @@ public class BaseConversion
 	{	
 		number=num;	
 		base=b;
-
 	}
 
 	private int convertToTen( )
@@ -27,10 +24,13 @@ public class BaseConversion
 		int q=number.length();
 		int base10=0;
 		for(int i=0;i<q;i++){
-			int num=number.charAt(q-i-1)-48;
-			base10=base10+num*Math.pow(base,i);
+			int digit=number.charAt(q-i-1)-48;
+			if(digit>9)
+				digit-=7;
+			base10+=digit*Math.pow(base,i);
 		}
 		return base10;
+		
 	}
 
 	public String getNum(int newBase)
@@ -38,7 +38,10 @@ public class BaseConversion
 		int base10 = convertToTen();
 		String newNum="";
 		while(base10>0){
-			newNum=base10%newBase+newNum;
+			String digit=String.valueOf(base10%newBase);
+			if(Integer.parseInt(digit)>9)
+				digit=""+(char)(Integer.parseInt(digit)+55);
+			newNum=digit+newNum;
 			base10/=newBase;
 		}
 		return newNum+"-"+newBase;

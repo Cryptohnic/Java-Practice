@@ -23,7 +23,7 @@ public class Histogram
 	public String toString() // return the map
 	{
 		String output = "char\t1---5----01---5\n"; // weird formatting that was asked for
-    	for (Map.Entry<String, Integer> entry : histogram.entrySet()) { // formatting
+    	for(Map.Entry<String, Integer> entry : histogram.entrySet()){ // formatting
         	String key = entry.getKey();
         	int value = entry.getValue();
 			String stars="";
