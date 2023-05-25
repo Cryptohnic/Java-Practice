@@ -23,10 +23,10 @@ public class Number implements Comparable<Number>
 	{
 		int currOnes=binary.replaceAll("0","").length();
 		int paramOnes=param.binary.replaceAll("0","").length();
-		if(currOnes==paramOnes){
-			if(base10!=param.base10)
+		if(currOnes==paramOnes){ // compare num of ones first
+			if(base10!=param.base10) // compare base10
 				return base10.compareTo(param.base10);
-			return number.compareTo(param.number);
+			return number.compareTo(param.number); // compare the original values
 		}
 		else if(currOnes>paramOnes)
 			return 1;
