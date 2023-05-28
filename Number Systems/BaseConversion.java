@@ -24,13 +24,12 @@ public class BaseConversion
 		int q=number.length();
 		int base10=0;
 		for(int i=0;i<q;i++){ // go through each character in given input
-			int digit=number.charAt(q-i-1)-48; // ASCII of 0 is 48 so for all digits -48. For letters you need to subtract extra because A ASCII is 65 and we need A to equal 10: 65-48-x=10 x=7
+			int digit=number.charAt(q-i-1)-48; // ASCII of 0 is 48 so for all digits -48. For letters you need to subtract extra because A ASCII is 65 and we need A to equal 10: 65-48-x=10 x=7 which accounts for the gap between digits and the capital alphabet in ASCII
 			if(digit>9)
 				digit-=7;
 			base10+=digit*Math.pow(base,i); // add the digit times base^i
 		}
 		return base10;
-		
 	}
 
 	public String getNum(int newBase)
