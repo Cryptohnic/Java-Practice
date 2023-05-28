@@ -7,46 +7,45 @@
 //or
 //array of ints
 
-import java.util.ArrayList;
-import static java.lang.System.*;
+import java.util.Arrays;
 
 public class IntQueue
 {
-	//pick your storage for the queue
-	//you can use the an array or an ArrayList
-
 	//option 1
 	private int[] rayOfInts;
 	private int numInts;
 
-	//option 2
-	private ArrayList<Integer> listOfInts;
-
 	public IntQueue()
 	{
+		rayOfInts=new int[0];
+		numInts=0;
 	}
 
 	public void add(int item)
 	{
+		rayOfInts=Arrays.copyOf(rayOfInts,++numInts);
+		rayOfInts[numInts-1]=item;
 	}
 
 	public int remove()
 	{
-		return 0;
+		int val=rayOfInts[0];
+		rayOfInts=Arrays.copyOfRange(rayOfInts,1,numInts--);
+		return val;
 	}
 
 	public boolean isEmpty()
 	{
-		return false;
+		return numInts==0;
 	}
 
 	public int peek()
 	{
-		return 0;
+		return rayOfInts[0];
 	}
 
 	public String toString()
 	{
-		return "";
+		return Arrays.toString(rayOfInts);
 	}
 }
