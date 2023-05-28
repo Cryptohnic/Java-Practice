@@ -4,9 +4,6 @@
 //Name -  
 
 import java.util.Queue;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 public class PQTester
@@ -15,26 +12,35 @@ public class PQTester
 
 	public PQTester()
 	{
+		this("");
 	}
 
 	public PQTester(String list)
 	{
+		pQueue=new PriorityQueue<>();
+		setPQ(list);
 	}
 
 	public void setPQ(String list)
 	{
+		for(String s : list.split(" "))
+			pQueue.add(s);
 	}
 	
 	public Object getMin()
 	{
-		return "";
+		return pQueue.peek();
 	}
 	
 	public String getNaturalOrder()
 	{
-		String output="";
-		return output;		
+		String ans="";
+		while(!pQueue.isEmpty())
+			ans+=pQueue.remove()+" ";
+		return ans;
 	}
 
-	//write a toString method
+	public String toString(){
+		return "toString() = "+pQueue.toString()+"\ngetMin() - "+getMin()+"\ngetNaturalOrder() - "+getNaturalOrder()+"\n\n";
+	}
 }

@@ -1,14 +1,11 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
 
 //ArrayList of ints
 //or
 //array of ints  
 
-import java.util.ArrayList;
-import static java.lang.System.*;
 
 public class IntQueueRunner
 {
