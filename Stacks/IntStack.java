@@ -7,8 +7,7 @@
 //or
 //array of ints
 
-import java.util.ArrayList;
-import static java.lang.System.*;
+import java.util.Arrays;
 
 public class IntStack
 {
@@ -19,36 +18,37 @@ public class IntStack
 	private int[] rayOfInts;
 	private int numInts;
 
-	//option 2
-	private ArrayList<Integer> listOfInts;
-
 	public IntStack()
 	{
-
+		rayOfInts=new int[0];
+		numInts=0;
 	}
 
 	public void push(int item)
 	{
-
+		rayOfInts=Arrays.copyOf(rayOfInts, ++numInts);
+		rayOfInts[numInts-1]=item;
 	}
 
 	public int pop()
 	{
-		return 0;
+		int num=rayOfInts[numInts-1];
+		rayOfInts=Arrays.copyOf(rayOfInts,--numInts);
+		return num;
 	}
 
 	public boolean isEmpty()
 	{
-		return false;
+		return numInts==0;
 	}
 
 	public int peek()
 	{
-		return 0;
+		return rayOfInts[numInts-1];
 	}
 
 	public String toString()
 	{
-		return "";
+		return Arrays.toString(rayOfInts);
 	}
 }

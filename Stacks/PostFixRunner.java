@@ -1,10 +1,5 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-
-import java.util.Stack;
-import java.util.Scanner;
-import static java.lang.System.*;
 
 public class PostFixRunner
 {

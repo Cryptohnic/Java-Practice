@@ -26,8 +26,5 @@ public class IntStackRunner
 		System.out.println(test.pop());
 		System.out.println(test.isEmpty());
 		System.out.println(test);
-
-		//expand the test cases to test the class more thoroughly
-
 	}
 }
