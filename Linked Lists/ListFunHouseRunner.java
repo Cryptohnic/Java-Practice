@@ -14,15 +14,13 @@ public class ListFunHouseRunner
 		       		new ListNode<>("up",		   		
 					new ListNode<>("over",null)))))));
 			 			
-		out.println("Lab15b Test Code\n\n");
+		out.println("\nLab15b Test Code\n\n");
 		
 		out.println("Original list values\n");	
 		ListFunHouse.print(z);
 		out.println("\n");
 		
 		out.println("num nodes = " + ListFunHouse.nodeCount(z));
-
-		
 		out.println("\nList values after calling nodeCount\n");	
 		ListFunHouse.print(z);
 		out.println();		
