@@ -17,12 +17,12 @@ public class HistoList<T>
 		@SuppressWarnings("unchecked")
 		Comparable<T> comparableLet = (Comparable<T>) Character.valueOf(let);
 		int index=indexOf(let);
-		if(indexOf(let)!=-1){
+		if(indexOf(let)!=-1){ // if a node already exists
 			HistoNode<T> current=nodeAt(index);
-			current.setDataCount(current.getDataCount()+1);
+			current.setDataCount(current.getDataCount()+1); // update its count
 		}	
 		else
-			front=new HistoNode<>(comparableLet,1,null,front);
+			front=new HistoNode<>(comparableLet,1,null,front); // add it to the front
 	}
 
 	//returns the index pos of let in the list if let exists
@@ -30,8 +30,8 @@ public class HistoList<T>
 	{
 		int spot=0;
 		HistoNode<T> temp=front;
-		while(temp!=null){
-			if(temp.getData()==(Comparable<?>)let)
+		while(temp!=null){ // loop through the list
+			if(temp.getData()==(Comparable<?>)let) // if we found it return the index
 				return spot;
 			else{
 				spot++;
@@ -45,7 +45,7 @@ public class HistoList<T>
 	private HistoNode<T> nodeAt(int spot)
 	{
 		HistoNode<T> current=front;
-		for(int i=0;i<spot;i++)
+		for(int i=0;i<spot;i++) // go to that node
 			current=current.getRight();
 		return current;
 	}
@@ -54,7 +54,7 @@ public class HistoList<T>
 	public String toString()
 	{
 		String output = "";
-		while(front!=null){
+		while(front!=null){ // formatting
 			output+=front.getData()+" - "+front.getDataCount()+"\t";
 			front=front.getRight();
 		}
