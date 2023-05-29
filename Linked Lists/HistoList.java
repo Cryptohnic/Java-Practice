@@ -1,14 +1,9 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-import java.util.*;
-import static java.lang.System.*;
-
-public class HistoList
+public class HistoList<T>
 {
-   private HistoNode front;
+   private HistoNode<T> front;
 
 	public HistoList( )
 	{
@@ -19,45 +14,39 @@ public class HistoList
 	//addLetter will bump up the count if let already exists
 	public void addLetter(char let)
 	{
-
-
-
-
-
-
-
-
+		@SuppressWarnings("unchecked")
+		Comparable<T> comparableLet = (Comparable<T>) Character.valueOf(let);
+		int index=indexOf(let);
+		if(indexOf(let)!=-1){
+			HistoNode<T> current=nodeAt(index);
+			current.setDataCount(current.getDataCount()+1);
+		}	
+		else
+			front=new HistoNode<>(comparableLet,1,null,front);
 	}
 
 	//returns the index pos of let in the list if let exists
 	public int indexOf(char let)
 	{
-
-
-
-
-
-
-
-
-
+		int spot=0;
+		HistoNode<T> temp=front;
+		while(temp!=null){
+			if(temp.getData()==(Comparable<?>)let)
+				return spot;
+			else{
+				spot++;
+				temp=temp.getRight();
+			}
+		}
 		return -1;
 	}
 
 	//returns a reference to the node at spot
-	private HistoNode nodeAt(int spot)
+	private HistoNode<T> nodeAt(int spot)
 	{
-		HistoNode current=null;
-
-
-
-
-
-
-
-
-
-
+		HistoNode<T> current=front;
+		for(int i=0;i<spot;i++)
+			current=current.getRight();
 		return current;
 	}
 
@@ -65,16 +54,10 @@ public class HistoList
 	public String toString()
 	{
 		String output = "";
-
-
-
-
-
-
-
-
-
-
+		while(front!=null){
+			output+=front.getData()+" - "+front.getDataCount()+"\t";
+			front=front.getRight();
+		}
 		return output;
 	}
 }

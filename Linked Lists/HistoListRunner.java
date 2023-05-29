@@ -1,9 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-import java.util.*;
 import static java.lang.System.*;
 
 public class HistoListRunner
@@ -11,7 +8,7 @@ public class HistoListRunner
 	public static void main(String[] args)
 	{
 		//A A A A B V S E A S A A
-		HistoList test = new HistoList();
+		HistoList<Character> test = new HistoList<>();
 		test.addLetter('A');
 		test.addLetter('A');
 		test.addLetter('A');
@@ -24,19 +21,19 @@ public class HistoListRunner
 		test.addLetter('S');
 		test.addLetter('A');
 		test.addLetter('A');
-		System.out.println(test);
+		out.println(test);
 
 
 		//A B C
-		test = new HistoList();
+		test = new HistoList<>();
 		test.addLetter('A');
 		test.addLetter('B');
 		test.addLetter('C');
-		System.out.println(test);
+		out.println(test);
 
 
 		//A B C A B C A B C A B C A B C
-		test = new HistoList();
+		test = new HistoList<>();
 		test.addLetter('A');
 		test.addLetter('B');
 		test.addLetter('C');
@@ -52,6 +49,6 @@ public class HistoListRunner
 		test.addLetter('A');
 		test.addLetter('B');
 		test.addLetter('C');
-		System.out.println(test);
+		out.println(test);
 	}
 }
