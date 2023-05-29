@@ -23,7 +23,7 @@ public class PQTester
 
 	public void setPQ(String list)
 	{
-		for(String s : list.split(" "))
+		for(String s : list.split(" ")) // add everything to the pQueue
 			pQueue.add(s);
 	}
 	
@@ -32,6 +32,7 @@ public class PQTester
 		return pQueue.peek();
 	}
 	
+	// pQueues aren't stored in order but rather remove in natural order generally using a min heap to have O(1) to the smallest val to get natural order remove everything
 	public String getNaturalOrder()
 	{
 		String ans="";

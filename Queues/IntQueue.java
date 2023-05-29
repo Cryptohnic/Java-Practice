@@ -17,20 +17,20 @@ public class IntQueue
 
 	public IntQueue()
 	{
-		rayOfInts=new int[0];
-		numInts=0;
+		rayOfInts=new int[0]; // create a new empty array
+		numInts=0; // set its length instance variable to zero
 	}
 
 	public void add(int item)
 	{
-		rayOfInts=Arrays.copyOf(rayOfInts,++numInts);
-		rayOfInts[numInts-1]=item;
+		rayOfInts=Arrays.copyOf(rayOfInts,++numInts); // create a copy that is one longer
+		rayOfInts[numInts-1]=item; // set the last vale in the list to item
 	}
 
 	public int remove()
 	{
-		int val=rayOfInts[0];
-		rayOfInts=Arrays.copyOfRange(rayOfInts,1,numInts--);
+		int val=rayOfInts[0]; // store the first value
+		rayOfInts=Arrays.copyOfRange(rayOfInts,1,numInts--); // delete it
 		return val;
 	}
 
@@ -41,7 +41,7 @@ public class IntQueue
 
 	public int peek()
 	{
-		return rayOfInts[0];
+		return rayOfInts[0]; // FIFO
 	}
 
 	public String toString()

@@ -26,7 +26,7 @@ public class PalinList
 
 	public void setList(String list)
 	{
-		for(String s : list.split(" ")){
+		for(String s : list.split(" ")){ // add everything to both the stack and the queue
 			stack.push(s);
 			queue.add(s);
 		}
@@ -36,7 +36,7 @@ public class PalinList
 	{
 		int times=stack.size()/2;
 		for(int i=0;i<times;i++)
-			if(!stack.pop().equals(queue.remove()))
+			if(!stack.pop().equals(queue.remove())) // if it isn't the same in the front and the back
 				return false;
 		return true;
 	}
