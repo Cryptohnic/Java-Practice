@@ -7,14 +7,14 @@ public class ListFunHouseRunner
 {
 	public static void main(String[] args)
 	{
-		ListNode<String> z = new ListNode<>("go",new ListNode("on",
+		ListNode<String> z = new ListNode<>("go",new ListNode<>("on",
 		      		new ListNode<>("at",
 			 		new ListNode<>("2.1",
 		      		new ListNode<>("-a-2-1",
 		       		new ListNode<>("up",		   		
 					new ListNode<>("over",null)))))));
 			 			
-		out.println("Lab15b Test Code\n\n");	
+		out.println("Lab15b Test Code\n\n");
 		
 		out.println("Original list values\n");	
 		ListFunHouse.print(z);

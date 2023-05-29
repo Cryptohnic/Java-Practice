@@ -1,26 +1,22 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-import static java.lang.System.*;
-
-public class ListFunHouseTwo
+public class ListFunHouseTwo<T>
 {
-	private ListNode theList;
+	private ListNode<T> theList;
 	
 	public ListFunHouseTwo(){
 		theList=null;
 	}
 	
-	public  void add(Comparable data){
-  		theList=new ListNode(data,theList);
+	public void add(T data){
+  		theList=new ListNode<>(data,theList);
 	}
 	
 	//this method will return the number of nodes present in list
 	public int nodeCount(){
 		int count=0;
-		ListNode temp=theList;
+		ListNode<T> temp=theList;
 		while(temp!=null){
 			count++;
 			temp=temp.getNext();
@@ -32,23 +28,23 @@ public class ListFunHouseTwo
 	//new node at the front of the list.  Once finished, the first node will occur twice.
 	public void doubleFirst()
 	{
-		theList=new ListNode(theList.getValue(),theList);
+		theList=new ListNode<>(theList.getValue(),theList);
 	}
 
 	//this method will create a new node with the same value as the last node and add this
 	//new node at the end.  Once finished, the last node will occur twice.
 	public void doubleLast()
 	{
-		ListNode temp=theList;
+		ListNode<T> temp=theList;
 		while(temp.getNext()!=null)
 			temp=temp.getNext();
-		temp.setNext(new ListNode(temp.getValue(),null));
+		temp.setNext(new ListNode<>(temp.getValue(),null));
 	}
 	
 	//method skipEveryOther will remove every other node
 	public void skipEveryOther()
 	{
-		ListNode temp=theList;
+		ListNode<T> temp=theList;
 		while(temp!=null && temp.getNext()!=null){
 			temp.setNext(temp.getNext().getNext());
 			temp=temp.getNext();
@@ -56,10 +52,10 @@ public class ListFunHouseTwo
 	}
 
 	//this method will set the value of every xth node in the list
-	public void setXthNode(int x, Comparable value)
+	public void setXthNode(int x, T value)
 	{
 		int count=1;
-		ListNode temp=theList;
+		ListNode<T> temp=theList;
 		while(temp!=null){
 			for(;count<x;count++){
 				if(temp==null)
@@ -77,7 +73,7 @@ public class ListFunHouseTwo
 	public void removeXthNode(int x)
 	{
 		int count=1;
-		ListNode temp=theList;
+		ListNode<T> temp=theList;
 		while(temp!=null){
 			for(;count<x-1;count++){
 				if(temp==null)
@@ -96,7 +92,7 @@ public class ListFunHouseTwo
 	public String toString()
     {
 		String output="";
-		ListNode temp=theList;
+		ListNode<T> temp=theList;
 		while(temp!=null){
 			output+=temp.getValue()+" ";
 			temp=temp.getNext();
