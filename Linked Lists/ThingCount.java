@@ -42,18 +42,18 @@ public class ThingCount<T> implements Comparable<T>
 	public boolean equals(Object obj)
 	{
 		ThingCount<T> tc = (ThingCount<T>)obj;
-		return getThing().equals(tc.getThing()) && getCount()==tc.getCount();
+		return getThing().equals(tc.getThing()) && getCount()==tc.getCount(); // compare the things
 	}
 
 	@SuppressWarnings("unchecked")
 	public int compareTo(Object obj)
 	{
 		ThingCount<T> tc=(ThingCount<T>) obj;
-		if(!getThing().getClass().equals(tc.getThing().getClass()))
+		if(!getThing().getClass().equals(tc.getThing().getClass())) // make sure same type and comparable
 			throw new RuntimeException("Both objects need to be of the same type");
 		if(!(getThing() instanceof Comparable && tc.getThing() instanceof Comparable))
 			throw new RuntimeException("Both objects need to be of type Comparable");
-		return ((Comparable<T>)getThing()).compareTo(tc.getThing());
+		return ((Comparable<T>)getThing()).compareTo(tc.getThing()); // compare the things
 	}
 	
 	public String toString()
