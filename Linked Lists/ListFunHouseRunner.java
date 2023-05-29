@@ -7,7 +7,7 @@ public class ListFunHouseRunner
 {
 	public static void main(String[] args)
 	{
-		ListNode<String> z = new ListNode<>("go",new ListNode<>("on",
+		ListNode<String> z = new ListNode<>("go",new ListNode<>("on", // instantiate the ListNode LinkedList
 		      		new ListNode<>("at",
 			 		new ListNode<>("2.1",
 		      		new ListNode<>("-a-2-1",
