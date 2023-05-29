@@ -1,63 +1,59 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class ThingCount implements Comparable
+public class ThingCount<T> implements Comparable<T>
 {
 	private int count;
-	private Object thing;
+	private T thing;
 	
 	public ThingCount()
 	{
-
-
+		this(null,0);
 	}
 	
-	public ThingCount(Object thang, int cnt)
-	{
-
-
+	public ThingCount(T thang, int cnt)
+	{	
+		setCount(cnt);
+		setThing(thang);
 	}
 
-	public void setThing(Object obj)
+	public void setThing(T obj)
 	{
-		
-		
+		thing=obj;
 	}
 	
 	public void setCount(int cnt)
 	{
-
-
+		count=cnt;
 	}
 	
-	public Object getThing()
+	public T getThing()
 	{
-		return null;
+		return thing;
 	}
 
 	public int getCount()
 	{
-		return 0;
+		return count;
 	}
-	
+
+	@Override
+	@SuppressWarnings("unchecked")
 	public boolean equals(Object obj)
 	{
-		ThingCount other = (ThingCount)obj;
-
-
-
-		return false;
+		ThingCount<T> tc = (ThingCount<T>)obj;
+		return getThing().equals(tc.getThing()) && getCount()==tc.getCount();
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	public int compareTo(Object obj)
 	{
-		ThingCount other = (ThingCount)obj;
-
-
-
-		return -1;		
+		ThingCount<T> tc=(ThingCount<T>) obj;
+		if(!getThing().getClass().equals(tc.getThing().getClass()))
+			throw new RuntimeException("Both objects need to be of the same type");
+		if(!(getThing() instanceof Comparable && tc.getThing() instanceof Comparable))
+			throw new RuntimeException("Both objects need to be of type Comparable");
+		return ((Comparable<T>)getThing()).compareTo(tc.getThing());
 	}
 	
 	public String toString()
