@@ -5,7 +5,7 @@ import static java.lang.System.*;
 
 public class ListFunHouseRunner
 {
-	public static void main ( String[] args )
+	public static void main(String[] args)
 	{
 		ListNode<String> z = new ListNode<>("go",new ListNode("on",
 		      		new ListNode<>("at",

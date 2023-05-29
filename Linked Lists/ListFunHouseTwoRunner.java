@@ -22,14 +22,12 @@ public class ListFunHouseTwoRunner
 		funHouse.add("over");
 			 			
 		out.println("Original list values\n");	
-		System.out.println(funHouse);
-		out.println("\n");
-		
-		out.println("num nodes = " + funHouse.nodeCount());
+		System.out.println(funHouse+"\n");
 
+		out.println("num nodes = " + funHouse.nodeCount());
 		out.println("\nList values after calling nodeCount\n");	
-		System.out.println(funHouse);
-		out.println();		
+		System.out.println(funHouse+"\n");
+		
 
 		funHouse.doubleLast();		
 		out.println("\nList values after calling doubleLast\n");							
