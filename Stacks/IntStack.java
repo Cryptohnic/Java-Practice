@@ -19,20 +19,20 @@ public class IntStack
 
 	public IntStack()
 	{
-		rayOfInts=new int[0];
-		numInts=0;
+		rayOfInts=new int[0]; // create a zero length array
+		numInts=0; // set the length instance variable to zero
 	}
 
 	public void push(int item)
 	{
-		rayOfInts=Arrays.copyOf(rayOfInts, ++numInts);
-		rayOfInts[numInts-1]=item;
+		rayOfInts=Arrays.copyOf(rayOfInts, ++numInts); // increase the length by one
+		rayOfInts[numInts-1]=item; // set the last value to item
 	}
 
 	public int pop()
 	{
-		int num=rayOfInts[numInts-1];
-		rayOfInts=Arrays.copyOf(rayOfInts,--numInts);
+		int num=rayOfInts[numInts-1]; // store the value
+		rayOfInts=Arrays.copyOf(rayOfInts,--numInts); // remove it
 		return num;
 	}
 

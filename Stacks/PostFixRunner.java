@@ -5,7 +5,7 @@ public class PostFixRunner
 {
 	public static void main ( String[] args )
 	{
-		PostFix test = new PostFix("2 7 + 1 2 + +");
+		PostFix test = new PostFix("2 7 + 1 2 + +"); // test differnt PostFix expressions
 		test.solve();
 		System.out.println(test);
 

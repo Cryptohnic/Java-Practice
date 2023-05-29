@@ -39,7 +39,7 @@ public class SyntaxChecker
 			if(map.containsValue(ch)) // if we are at on open symbol
 				symbols.push(ch);
 			else if(map.containsKey(ch)){ // if we are at a close symbol
-				if(symbols.size()==0) return false; // if there is nothing to pop we are closing nothing
+				if(symbols.size()==0) return false; // if there is nothing to remove
 				if(symbols.pop()!=map.get(ch)) // if the previous open character doesn't match the current closing character
 					return false;
 			}
