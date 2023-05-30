@@ -8,7 +8,7 @@ import static java.lang.System.*;
 public class ListFunHouse
 {
 	//this method will print the entire list on the screen
-    public static void print(ListNode<?> list)
+    public static void print(ListNode list)
     {
 		while(list!=null){ // print the value and then go to the next
 			out.print(list.getValue()+" ");
@@ -17,7 +17,7 @@ public class ListFunHouse
     }		
 	
 	//this method will return the number of nodes present in list
-	public static int nodeCount(ListNode<?> list)
+	public static int nodeCount(ListNode list)
 	{
    		int count=0;
 		while(list!=null){ // count the value and then go to the next
@@ -29,22 +29,22 @@ public class ListFunHouse
 		
 	//this method will create a new node with the same value as the first node and add this
 	//new node to the list.  Once finished, the first node will occur twice.
-	public static <T> void doubleFirst(ListNode<T> list)
+	public static void doubleFirst(ListNode list)
 	{
-		list=new ListNode<>(list.getValue(),list); // set the next value to the first's value and storing the next Node to double the first
+		list=new ListNode(list.getValue(),list); // set the next value to the first's value and storing the next Node to double the first
 	}
 
 	//this method will create a new node with the same value as the last node and add this
 	//new node at the end. Once finished, the last node will occur twice.
-	public static <T> void doubleLast(ListNode<T> list)
+	public static void doubleLast(ListNode list)
 	{
 		while(list.getNext()!=null) // traverse to the last Node
 			list=list.getNext();
-		list.setNext(new ListNode<>(list.getValue(),null)); // change the next from null to a new node with the same value pointing to null
+		list.setNext(new ListNode(list.getValue(),null)); // change the next from null to a new node with the same value pointing to null
 	}
 		
 	//method skipEveryOther will remove every other node
-	public static <T> void skipEveryOther(ListNode<T> list)
+	public static void skipEveryOther(ListNode list)
 	{
 		while(list!=null && list.getNext()!=null){ // if we have two values left, skip the next value
 			list.setNext(list.getNext().getNext());
@@ -53,7 +53,7 @@ public class ListFunHouse
 	}
 
 	//this method will set the value of every xth node in the list
-	public static <T> void setXthNode(ListNode<T> list, int x, T value)
+	public static void setXthNode(ListNode list, int x, Comparable value)
 	{
 		int count=1; // count the first Node
 		while(list!=null){
@@ -68,7 +68,7 @@ public class ListFunHouse
 	}	
 
 	//this method will remove every xth node in the list
-	public static <T> void removeXthNode(ListNode<T> list, int x)
+	public static void removeXthNode(ListNode list, int x)
 	{
 		int count=1; // count the first Node
 		while(list!=null){

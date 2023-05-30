@@ -7,12 +7,12 @@ public class ListFunHouseRunner
 {
 	public static void main(String[] args)
 	{
-		ListNode<String> z = new ListNode<>("go",new ListNode<>("on", // instantiate the ListNode LinkedList
-		      		new ListNode<>("at",
-			 		new ListNode<>("2.1",
-		      		new ListNode<>("-a-2-1",
-		       		new ListNode<>("up",		   		
-					new ListNode<>("over",null)))))));
+		ListNode z = new ListNode("go",new ListNode("on", // instantiate the ListNode LinkedList
+		      		new ListNode("at",
+			 		new ListNode("2.1",
+		      		new ListNode("-a-2-1",
+		       		new ListNode("up",		   		
+					new ListNode("over",null)))))));
 			 			
 		out.println("\nLab15b Test Code\n\n");
 		

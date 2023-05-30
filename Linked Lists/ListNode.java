@@ -1,40 +1,40 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class ListNode<T> implements Linkable<T>
+public class ListNode implements Linkable
 {
-	private T listNodeValue;
-	private ListNode<T> nextListNode;
+	private Comparable listNodeValue;
+	private ListNode nextListNode;
 
 	public ListNode()
 	{
 		this(null,null);
 	}
 
-	public ListNode(T value, ListNode<T> next)
+	public ListNode(Comparable value, ListNode next)
 	{
 		listNodeValue=value;
 		nextListNode=next;
 	}
 
-	public T getValue()
+	public Comparable getValue()
 	{
 		return listNodeValue;
 	}
 
-	public ListNode<T> getNext()
+	public ListNode getNext()
 	{
 	   return nextListNode;
 	}
 
 
-	public void setValue(T value)
+	public void setValue(Comparable value)
 	{
 		listNodeValue = value;
 	}
 
-	public void setNext(Linkable<T> next)
+	public void setNext(Linkable next)
 	{
-		nextListNode = (ListNode<T>)next;
+		nextListNode = (ListNode)next;
 	}
 }

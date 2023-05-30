@@ -7,13 +7,13 @@ public class ThingCountRunner
 {
 	public static void main(String[] args)
 	{
-		ThingCount<Object> one = new ThingCount<>();
-		ThingCount<Object> two = new ThingCount<>('A',5);
+		ThingCount one = new ThingCount();
+		ThingCount two = new ThingCount('A',5);
 		
 		System.out.println(one);
 		System.out.println(two);
 		
-		ThingCount<Object> three = new ThingCount<>("hello", 7);
+		ThingCount three = new ThingCount("hello", 7);
 		System.out.println(three);
 		System.out.println(three.getCount());
 		three.setCount(22);

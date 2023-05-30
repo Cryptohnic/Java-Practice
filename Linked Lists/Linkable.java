@@ -1,10 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public interface Linkable<T>
+public interface Linkable
 {
-   T getValue();
-   Linkable<T> getNext();
-   void setNext(Linkable<T> next);
-   void setValue(T value);
+   Comparable getValue();
+   Linkable getNext();
+   void setNext(Linkable next);
+   void setValue(Comparable value);
 }

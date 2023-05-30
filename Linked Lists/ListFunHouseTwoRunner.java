@@ -7,7 +7,7 @@ public class ListFunHouseTwoRunner
 {
 	public static void main ( String[] args )
 	{
-		ListFunHouseTwo<String> funHouse = new ListFunHouseTwo<>(); 
+		ListFunHouseTwo funHouse = new ListFunHouseTwo(); 
 		
 		funHouse.add("go");
 		funHouse.add("on");
