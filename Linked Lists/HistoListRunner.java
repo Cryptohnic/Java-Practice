@@ -8,7 +8,7 @@ public class HistoListRunner
 	public static void main(String[] args)
 	{
 		//A A A A B V S E A S A A
-		HistoList<Character> test = new HistoList<>();
+		HistoList test = new HistoList();
 		test.addLetter('A');
 		test.addLetter('A');
 		test.addLetter('A');
@@ -25,7 +25,7 @@ public class HistoListRunner
 
 
 		//A B C
-		test = new HistoList<>();
+		test = new HistoList();
 		test.addLetter('A');
 		test.addLetter('B');
 		test.addLetter('C');
@@ -33,7 +33,7 @@ public class HistoListRunner
 
 
 		//A B C A B C A B C A B C A B C
-		test = new HistoList<>();
+		test = new HistoList();
 		test.addLetter('A');
 		test.addLetter('B');
 		test.addLetter('C');

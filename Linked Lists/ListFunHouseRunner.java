@@ -25,7 +25,7 @@ public class ListFunHouseRunner
 		ListFunHouse.print(z);
 		out.println();		
 
-		ListFunHouse.doubleFirst(z);
+		ListFunHouse.doubleFirst(z); // passes in a new Pointer pointing to the same place in memory
 		out.println("\nList values after calling doubleFirst\n");							
 		ListFunHouse.print(z);	
 		out.println();	 

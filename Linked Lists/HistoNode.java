@@ -3,14 +3,14 @@
 
 //Name -
 
-public class HistoNode<T>
+public class HistoNode
 {
-	private Comparable<T> data;
+	private Comparable data;
 	private int dataCount;
-	private HistoNode<T> left;
-	private HistoNode<T> right;
+	private HistoNode left;
+	private HistoNode right;
 
-	public HistoNode(Comparable<T> d, int cnt, HistoNode<T> lft, HistoNode<T> rt)
+	public HistoNode(Comparable d, int cnt, HistoNode lft, HistoNode rt)
 	{
 		data=d;
 		dataCount=cnt;
@@ -18,7 +18,7 @@ public class HistoNode<T>
 		right=rt;
 	}
 
-	public Comparable<T> getData()
+	public Comparable getData()
 	{
 		return data;
 	}
@@ -28,17 +28,17 @@ public class HistoNode<T>
 		return dataCount;
 	}
 
-	public HistoNode<T> getLeft()
+	public HistoNode getLeft()
 	{
 	   return left;
 	}
 
-	public HistoNode<T> getRight()
+	public HistoNode getRight()
 	{
 	   return right;
 	}
 
-	public void setData(Comparable<T> d)
+	public void setData(Comparable d)
 	{
 		data=d;
 	}
@@ -48,12 +48,12 @@ public class HistoNode<T>
 		dataCount=cnt;
 	}
 
-	public void setLeft(HistoNode<T> lft)
+	public void setLeft(HistoNode lft)
 	{
 		left=lft;
 	}
 
-	public void setRight(HistoNode<T> rt)
+	public void setRight(HistoNode rt)
 	{
 		right=rt;
 	}

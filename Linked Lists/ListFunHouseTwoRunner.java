@@ -25,7 +25,7 @@ public class ListFunHouseTwoRunner
 		out.println("\nList values after calling nodeCount\n");	
 		out.println(funHouse+"\n");
 	
-		funHouse.doubleLast();		
+		funHouse.doubleLast(); // passes in a new Pointer pointing to the same place in memory
 		out.println("\nList values after calling doubleLast\n");							
 		out.println(funHouse);
 		out.println();

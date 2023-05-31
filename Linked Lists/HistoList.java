@@ -1,9 +1,9 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class HistoList<T>
+public class HistoList
 {
-   private HistoNode<T> front;
+   private HistoNode front;
 
 	public HistoList( )
 	{
@@ -14,24 +14,23 @@ public class HistoList<T>
 	//addLetter will bump up the count if let already exists
 	public void addLetter(char let)
 	{
-		@SuppressWarnings("unchecked")
-		Comparable<T> comparableLet = (Comparable<T>) Character.valueOf(let);
+
 		int index=indexOf(let);
 		if(indexOf(let)!=-1){ // if a node already exists
-			HistoNode<T> current=nodeAt(index);
+			HistoNode current=nodeAt(index);
 			current.setDataCount(current.getDataCount()+1); // update its count
 		}	
 		else
-			front=new HistoNode<>(comparableLet,1,null,front); // add it to the front
+			front=new HistoNode(let,1,null,front); // add it to the front
 	}
 
 	//returns the index pos of let in the list if let exists
 	public int indexOf(char let)
 	{
 		int spot=0;
-		HistoNode<T> temp=front;
+		HistoNode temp=front;
 		while(temp!=null){ // loop through the list
-			if(temp.getData()==(Comparable<?>)let) // if we found it return the index
+			if(temp.getData().compareTo(let)==0) // if we found it return the index
 				return spot;
 			else{
 				spot++;
@@ -42,9 +41,9 @@ public class HistoList<T>
 	}
 
 	//returns a reference to the node at spot
-	private HistoNode<T> nodeAt(int spot)
+	private HistoNode nodeAt(int spot)
 	{
-		HistoNode<T> current=front;
+		HistoNode current=front;
 		for(int i=0;i<spot;i++) // go to that node
 			current=current.getRight();
 		return current;
