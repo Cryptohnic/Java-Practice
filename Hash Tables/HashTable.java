@@ -7,17 +7,22 @@ public class HashTable
 {
 	private LinkedList[] table;
 
-	public HashTable( )
+	public HashTable()
 	{
-		table=new LinkedList[10];
+		this(10);
+	}
+
+	public HashTable(int size)
+	{
+		table=new LinkedList[size]; // create your table
 		for(int i=0;i<table.length;i++)
-			table[i]=new LinkedList();
+			table[i]=new LinkedList(); // create a new LinkedList at each spot in the table
 	}
 
 	public void add(Object obj)
 	{
 		int i = obj.hashCode()%table.length;
-		if(!table[i].contains(obj))
+		if(!table[i].contains(obj)) // if we don't already have this object stored
 			table[i].add(obj);
 	}
 
@@ -26,7 +31,7 @@ public class HashTable
 		String output="HASHTABLE\n";
 		int i=0;
 		for(LinkedList l : table)
-			output+="bucket "+i+++" "+l.toString().replaceAll("[^\\d\\s\\w]","")+"\n";
+			output+="bucket "+i+++" "+l.toString().replaceAll("[^\\d\\s\\w]","")+"\n"; // add the list as a string but remove any non-digit, non-word character, or non-space
 		return output;
 	}
 }
