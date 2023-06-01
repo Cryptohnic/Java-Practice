@@ -3,7 +3,7 @@
 
 //Name -
 
-import java.util.LinkedList;
+
 import java.util.Scanner;
 import java.io.File;
 import static java.lang.System.*;
@@ -13,13 +13,12 @@ public class HashTableRunner
   public static void main ( String[] args )
   {
 		try{
-			//make a new table			
-			
-			//read from the file			
-			
-			//load stuff into the table			
-			
-			//print out the table
+			Scanner s=new Scanner(new File("numbers.dat"));
+			int times=s.nextInt();
+			HashTable ht=new HashTable();
+			for(int i=0;i<times;i++)
+				ht.add(s.nextInt());
+			out.println(ht);
 		}
 		catch(Exception e)
 		{

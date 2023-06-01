@@ -1,11 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import java.util.LinkedList;
-import java.util.Scanner;
-import static java.lang.System.*;
 
 public class HashTable
 {
@@ -13,33 +9,23 @@ public class HashTable
 
 	public HashTable( )
 	{
-		table = new LinkedList[10];
+		table=new LinkedList[10];
+		for(int i=0;i<table.length;i++)
+			table[i]=new LinkedList();
 	}
 
 	public void add(Object obj)
 	{
-		System.out.println("add");
-		int i = obj.hashCode();
-
-
-
-
-
+		int i = obj.hashCode()%table.length;
+		if(!table[i].contains(obj))
+			table[i].add(obj);
 	}
 
 	public String toString()
 	{
 		String output="HASHTABLE\n";
-
-
-
-
-
-
-
-
-
-
+		for(LinkedList l : table)
+			output+="bucket "+l.toString().replaceAll("[^\\d\\s]","")+"\n";
 		return output;
 	}
 }
