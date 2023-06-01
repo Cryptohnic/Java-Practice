@@ -31,7 +31,7 @@ public class HashTable
 		String output="HASHTABLE\n";
 		int i=0;
 		for(LinkedList l : table)
-			output+="bucket "+i+++" "+l.toString().replaceAll("[^\\d\\s\\w]","")+"\n"; // add the list as a string but remove any non-digit, non-word character, or non-space
+			output+="bucket "+i+++" "+l.toString().replaceAll("[^\\d\\s\\w]","")+"\n"; // add the list as a string but remove any list formatting use regex
 		return output;
 	}
 }
