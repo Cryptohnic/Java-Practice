@@ -28,19 +28,17 @@ public class MergeSort{
 	}
 
 	private static void merge(Comparable[] list, int left, int mid, int right){  // O(N)
-
-		Comparable[] temp=new Comparable[right-left+1];
-		int i=left, j=mid+1, k=0;
-		while(i<=mid && j<=right) // while we have vals in both halves still
-			if(list[i].compareTo(list[j])<0) // if left is smaller insert it otherwise insert smaller right value
-				temp[k++]=list[i++];
-			else
-				temp[k++]=list[j++];
-		while(i<=mid) // if only left values remaining
-			temp[k++]=list[i++];
-		while(j<=right) // if only right values remaining
-			temp[k++]=list[j++];
-		for(int p=0;p<temp.length;p++) // update with sorted mini list
-			list[left+p]=temp[p];
+		Comparable[] temp=Arrays.copyOfRange(list, left, right+1);
+    	int i=0, j=mid-left+1, k=left;
+    	while(i<=mid-left && j<=right-left){
+        	if(temp[i].compareTo(temp[j])<0)
+            	list[k++]=temp[i++];
+        	else
+            	list[k++]=temp[j++];
+    	}
+    	while(i<=mid-left)
+        	list[k++]=temp[i++];
+    	while(j<=right-left)
+        	list[k++]=temp[j++];
 	}
 }
