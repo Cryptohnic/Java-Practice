@@ -17,7 +17,13 @@ public class HashTableRunner
 			int times=s.nextInt();
 			HashTable ht=new HashTable();
 			for(int i=0;i<times;i++)
-				ht.add(s.nextInt());
+				ht.add(new Number(s.nextInt()));
+			out.println(ht+"\n");
+			s=new Scanner(new File("words.dat"));
+			times=s.nextInt();
+			ht=new HashTable();
+			for(int i=0;i<times;i++)
+				ht.add(new Word(s.next()));
 			out.println(ht);
 		}
 		catch(Exception e)

@@ -9,8 +9,7 @@ public class Number
 	
 	public Number(int value)
 	{
-
-
+		theValue=value;
 	}	
 	
 	public int getValue()
@@ -20,16 +19,16 @@ public class Number
 	
 	public boolean equals(Object obj)
 	{
-		return false;
+		return theValue==((Number)obj).theValue;
 	} 
 	
 	public int hashCode()
 	{
-		return 0;
+		return theValue%10;
 	}
 
 	public String toString()
 	{
-		return "";
+		return ""+theValue;
 	}	
 }

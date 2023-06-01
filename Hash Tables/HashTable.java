@@ -24,8 +24,9 @@ public class HashTable
 	public String toString()
 	{
 		String output="HASHTABLE\n";
+		int i=0;
 		for(LinkedList l : table)
-			output+="bucket "+l.toString().replaceAll("[^\\d\\s]","")+"\n";
+			output+="bucket "+i+++" "+l.toString().replaceAll("[^\\d\\s\\w]","")+"\n";
 		return output;
 	}
 }
