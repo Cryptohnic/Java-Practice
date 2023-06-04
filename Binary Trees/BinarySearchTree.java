@@ -1,9 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-import static java.lang.System.*;
+import static java.lang.System.out;
+import java.util.Queue;
 import java.util.LinkedList;
 
 public class BinarySearchTree
@@ -12,57 +11,110 @@ public class BinarySearchTree
 
 	public BinarySearchTree()
 	{
-		root = null;
+		root=null;
 	}
 
 	public void add(Comparable val)
 	{
-		root = add(val, root);
+		root=add(val,root);
 	}
 
 	private TreeNode add(Comparable val, TreeNode tree)
 	{
-	   if(tree == null)
-			tree = new TreeNode(val);
-		
-		Comparable treeValue = tree.getValue();
-		int dirTest = val.compareTo(treeValue);
-		
-		
-		if(dirTest <= 0)
-			tree.setLeft(add(val, tree.getLeft()));
-		else if(dirTest > 0)
-			tree.setRight(add(val, tree.getRight()));
-		
+		if(tree==null)
+			tree=new TreeNode(val);
+		else{
+			Comparable treeValue=tree.getValue();
+			int dirTest=val.compareTo(treeValue);
+			if(dirTest<0)
+				tree.setLeft(add(val, tree.getLeft()));
+			else if(dirTest>=0)
+				tree.setRight(add(val, tree.getRight()));
+		}
 		return tree;
 	}
 
-   public void inOrder()
+   	public void inOrder()
 	{
 		inOrder(root);
-		System.out.println("\n\n");
+		out.println("\n\n");
 	}
 
-	private void inOrder(TreeNode tree)
+	private void inOrder(TreeNode tree) // all left values first then all right values
 	{
-		if (tree != null){
+		if (tree!=null){
 			inOrder(tree.getLeft());
-			System.out.print(tree.getValue() + " ");
+			out.print(tree.getValue()+" ");
 			inOrder(tree.getRight());
 		}
 	}
 
-	//add preOrder, postOrder, and revOrder
+	public void preOrder()
+	{
+		preOrder(root);
+		out.println("\n\n");
+	}
 	
-	
-	
-	
-	
-	
-	
+	private void preOrder(TreeNode tree) // returns the values in a possible arrangement of how they were added
+	{
+		if(tree!=null){
+			out.print(tree.getValue()+" ");
+			preOrder(tree.getLeft());
+			preOrder(tree.getRight());
+		}
+	}
 
+	public void postOrder()
+	{
+		postOrder(root);
+		out.println("\n\n");
+	}
+	
+	private void postOrder(TreeNode tree) // go to the left and then start going to the right until you have to go up
+	{
+		if(tree!=null){
+			postOrder(tree.getLeft());
+			postOrder(tree.getRight());
+			out.print(tree.getValue()+" ");
+		}
+	}
 
+	public void levelOrder()
+	{
+		Queue<TreeNode> queue=new LinkedList<>();
+		queue.add(root);
+		levelOrder(queue);
+		out.println("\n\n");
+	}
+	
+	private void levelOrder(Queue<TreeNode> queue)
+	{
+		if(queue.isEmpty())
+			return;
+		TreeNode node=queue.remove();
+		out.print(node.getValue()+" ");
+		if(node.getLeft()!=null)
+			queue.add(node.getLeft());
+		if(node.getRight()!=null)
+			queue.add(node.getRight());
+		levelOrder(queue); // since queues are FIFO it just does every nodes left and right in order
+	}
+	
+	public void reverseOrder()
+	{
+		reverseOrder(root);
+		out.println("\n\n");
+	}
 
+	private void reverseOrder(TreeNode tree) // start at the bottom right and then print any children to its left repeated
+	{
+		if(tree!=null){
+			reverseOrder(tree.getRight());
+			out.print(tree.getValue()+" ");
+			reverseOrder(tree.getLeft());
+		}
+	}
+	
 	public int getNumLevels()
 	{
 		return getNumLevels(root);
@@ -71,53 +123,183 @@ public class BinarySearchTree
 	private int getNumLevels(TreeNode tree)
 	{
 		if(tree==null)
-			return 0;
-		else if(getNumLevels(tree.getLeft())>getNumLevels(tree.getRight()))
-			return 1+getNumLevels(tree.getLeft());
-		else
-			return 1+getNumLevels(tree.getRight());
+        	return 0;
+    	return Math.max(getNumLevels(tree.getLeft()), getNumLevels(tree.getRight()))+1; // traverse the entire tree and find the longest chain
 	}
 
-
-
-	//add getNumLeaves, getWidth, getHeight, getNumNodes, and isFull
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	public int getNumLeaves()
+	{
+		return getNumLeaves(root);
+	}
 	
-	//add extra credit options here - 10 points each
-	
-	//search
-	
-	//maxNode
-	
-	//minNode
-	
-	//level order
-	
-	//display like a tree
-	
-	//remove
+	private int getNumLeaves(TreeNode tree)
+	{
+		if(tree==null)
+			return 0;
+		else if(tree.getLeft()==null && tree.getRight()==null) // if no children add one
+			return 1;
+		else
+			return getNumLeaves(tree.getLeft())+getNumLeaves(tree.getRight()); // traverse the whole tree
+	}
 
+	public int getWidth()
+	{
+		return getWidth(root);
+	}
+	
+	private int getWidth(TreeNode tree) // finds the longest possible traversal length in the tree
+	{
+		return getNumLevels(tree.getLeft())+getNumLevels(tree.getRight())+1;
+	}
+
+	public int getHeight()
+	{
+		return getHeight(root);
+	}
+	
+	private int getHeight(TreeNode tree) // height is literally just minus 1
+	{
+		return getNumLevels(tree)-1;
+	}
+	
+	public int getNumNodes(){
+		return getNumNodes(root);
+	}
+
+	private int getNumNodes(TreeNode tree){
+		if(tree==null) return 0;
+		else
+			return 1+getNumNodes(tree.getLeft())+getNumNodes(tree.getRight()); // adds one for each node and traverses recursively
+	}
+
+	public boolean isFull()
+	{
+		return isFull(root);
+	}
+
+	private boolean isFull(TreeNode tree) // if 2^levels-1==number of nodes tree is full
+	{
+		return Math.pow(2,getNumLevels())-1==getNumNodes();
+	}
+	
+	public boolean search(Comparable value){
+		return search(root,value);
+	}
+
+	public boolean search(TreeNode tree, Comparable value){
+		if(tree!=null){
+			int dirTest=value.compareTo(tree.getValue());
+			if(dirTest==0)
+				return true;
+			else if(dirTest<0)
+				return search(tree.getLeft(),value);
+			else
+				return search(tree.getRight(),value);
+		}
+		return false;
+	}
+	
+	public Comparable maxNode(){
+		return maxNode(root).getValue();
+	}
+
+	public TreeNode maxNode(TreeNode tree){
+		if(tree.getRight()==null)
+			return tree;
+		return maxNode(tree.getRight()); // return the rightmost node
+	}
+	
+	public Comparable minNode(){
+		return minNode(root).getValue(); 
+	}
+
+	public TreeNode minNode(TreeNode tree){
+		if(tree.getLeft()==null)
+			return tree;
+		return minNode(tree.getLeft()); // return the leftmost node
+	}
+	
+	public void remove(Comparable value){
+		root=remove(root, value);
+	}
+
+	public TreeNode remove(TreeNode tree, Comparable value){
+		if(tree!=null){
+			int dirTest=value.compareTo(tree.getValue());
+			if(dirTest<0) // if its less than the current value go left
+				tree.setLeft(remove(tree.getLeft(),value));
+			else if(dirTest>0) // if its greater than the current value go right
+				tree.setRight(remove(tree.getRight(),value));
+			else{ // if we found the value
+				if(tree.getRight()!=null){ // if it has values to its right, set it to the next smallest value
+					TreeNode successor=minNode(tree.getRight());
+					tree.setValue(successor.getValue());
+					tree.setRight(remove(tree.getRight(),successor.getValue())); // keep replacing with successors until none left
+				}
+				else
+					tree=tree.getLeft(); // set it to the left node left over, if there isn't one it will just become null
+			}
+		}
+		return tree;
+	}
 
 	public String toString()
 	{
-		return "";
+		Queue<TreeNode> queue=new LinkedList<>();
+		queue.add(root);
+		return toString(root,queue);
 	}
 
-	private String toString(TreeNode tree)
+	private int squaredSums(int input){ // find the number needed for toString() calculation. Figured this out by finding pattern in a tree of odd length values four levels tall
+		int ans=1;
+		while(input>1){
+			ans+=Math.pow(2,input);
+			input--;
+		}
+		return ans;
+	}
+
+	private String toString(TreeNode tree, Queue<TreeNode> queue)
 	{
-		return "";
+		if(tree==null)
+			return "";
+		String ans="";
+		int maxLength=String.valueOf(maxNode()).length();
+		int height=getHeight();
+		int between=(int)Math.pow(2,height)*maxLength+squaredSums(height); // distance between values for the first row
+		String betweenSpaces=String.format("%"+between+"s","");
+		int initialGap=(int)Math.pow(2,height-1)*maxLength+(int)Math.pow(2,height)-2; // length of intial gap on the first row
+		String gapSpaces=String.format("%"+initialGap+"s","");
+		Queue<TreeNode> nextRow=new LinkedList<>();
+		for(int i=height;i>=0;i--){ // start at the top of the tree and go down
+			if(i!=0) // if we aren't on the last row add the gap
+				ans+=gapSpaces;
+			else
+				betweenSpaces=String.format("%"+maxLength+"s",""); // make the gap set to the max number length
+			while(!queue.isEmpty()){ // entire current row
+				TreeNode currNode=queue.remove();
+				Comparable currValue;
+				if(currNode!=null){
+					nextRow.add(currNode.getLeft()); // add the null ones too
+					nextRow.add(currNode.getRight());
+					currValue=currNode.getValue();
+				}
+				else
+					currValue="";
+				ans+=String.format("%"+maxLength+"s"+betweenSpaces,currValue); // add to the ans
+				if(i==0) // if we are on the last row
+					if(betweenSpaces.length()==maxLength) // last row changes each iteration so it is hard coded
+						betweenSpaces=" ";
+					else
+						betweenSpaces=String.format("%"+maxLength+"s","");
+			}
+			if(i==0) break;
+			ans+="\n";
+			gapSpaces=gapSpaces.substring((int)Math.pow(2,i-2)*maxLength+(int)Math.pow(2,i-1)); // update gap for next row by removing half of the maxLengths and (half of the added nums)-1 (gap pattern is one ahead of spacing pattern)
+			betweenSpaces=betweenSpaces.substring((int)Math.pow(2,i-1)*maxLength+(int)Math.pow(2,i)); // update the spacing by removing half of the maxLengths and removing current amount of maxLengths from the added num
+			queue=nextRow; // move onto the next row
+			nextRow=new LinkedList<>();
+		}
+		return ans;
 	}
 }

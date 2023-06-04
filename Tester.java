@@ -202,5 +202,10 @@ public class Tester{
         System.out.println(stack.pop());
         System.out.println(queue);
         System.out.println(stack);
+
+
+        Queue<String> q=new LinkedList<>();
+        q.add(null);
+        System.out.println(q.toString());
     }
 }
