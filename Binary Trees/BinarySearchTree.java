@@ -242,15 +242,14 @@ public class BinarySearchTree
 		}
 		return tree;
 	}
-
+	
 	public String toString()
 	{
-		Queue<TreeNode> queue=new LinkedList<>();
-		queue.add(root);
-		return toString(root,queue);
+		TreeNode[] arr=new TreeNode[]{root};
+		return toString(root,arr);
 	}
 
-	private int squaredSums(int input){ // find the number needed for toString() calculation. Figured this out by finding pattern in a tree of odd length values four levels tall
+	private int squaredSums(int input){ // find the number of extra spaces for the first row of the toString(). Figured this out by finding pattern in a tree of odd length values four levels tall
 		int ans=1;
 		while(input>1){
 			ans+=Math.pow(2,input);
@@ -259,7 +258,7 @@ public class BinarySearchTree
 		return ans;
 	}
 
-	private String toString(TreeNode tree, Queue<TreeNode> queue)
+	private String toString(TreeNode tree, TreeNode[] row) // level order approach using an array instead
 	{
 		if(tree==null)
 			return "";
@@ -270,35 +269,36 @@ public class BinarySearchTree
 		String betweenSpaces=String.format("%"+between+"s","");
 		int initialGap=(int)Math.pow(2,height-1)*maxLength+(int)Math.pow(2,height)-2; // length of intial gap on the first row
 		String gapSpaces=String.format("%"+initialGap+"s","");
-		Queue<TreeNode> nextRow=new LinkedList<>();
 		for(int i=height;i>=0;i--){ // start at the top of the tree and go down
+			TreeNode[] nextRow=new TreeNode[row.length*2]; // create the next row to add new nodes to
 			if(i!=0) // if we aren't on the last row add the gap
 				ans+=gapSpaces;
 			else
-				betweenSpaces=String.format("%"+maxLength+"s",""); // make the gap set to the max number length
-			while(!queue.isEmpty()){ // entire current row
-				TreeNode currNode=queue.remove();
+				betweenSpaces=String.format("%"+maxLength+"s",""); // set the betweenSpaces to max number length
+			int spot=0;
+			for(TreeNode currNode : row){ // entire current row
 				Comparable currValue;
 				if(currNode!=null){
-					nextRow.add(currNode.getLeft()); // add the null ones too
-					nextRow.add(currNode.getRight());
+					nextRow[spot++]=currNode.getLeft(); // add the null ones too
+					nextRow[spot++]=currNode.getRight();
 					currValue=currNode.getValue();
 				}
-				else
+				else{ // make sure that the next row keeps these vals as null so the spacing is right
+					spot+=2;
 					currValue="";
-				ans+=String.format("%"+maxLength+"s"+betweenSpaces,currValue); // add to the ans
+				}
+				ans+=String.format("%"+maxLength+"s"+betweenSpaces,currValue); // add the value to the String version of the tree
 				if(i==0) // if we are on the last row
-					if(betweenSpaces.length()==maxLength) // last row changes each iteration so it is hard coded
+					if(betweenSpaces.length()==maxLength) // last row changes each iteration so it is hard coded. Alternates between one spaces and maxlength spaces
 						betweenSpaces=" ";
 					else
 						betweenSpaces=String.format("%"+maxLength+"s","");
 			}
-			if(i==0) break;
+			if(i==0) break; // we are done already
 			ans+="\n";
 			gapSpaces=gapSpaces.substring((int)Math.pow(2,i-2)*maxLength+(int)Math.pow(2,i-1)); // update gap for next row by removing half of the maxLengths and (half of the added nums)-1 (gap pattern is one ahead of spacing pattern)
 			betweenSpaces=betweenSpaces.substring((int)Math.pow(2,i-1)*maxLength+(int)Math.pow(2,i)); // update the spacing by removing half of the maxLengths and removing current amount of maxLengths from the added num
-			queue=nextRow; // move onto the next row
-			nextRow=new LinkedList<>();
+			row=nextRow; // move onto the next row
 		}
 		return ans;
 	}
