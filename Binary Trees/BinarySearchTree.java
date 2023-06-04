@@ -249,7 +249,7 @@ public class BinarySearchTree
 		return toString(root,arr);
 	}
 
-	private int squaredSums(int input){ // find the number of extra spaces for the first row of the toString(). Figured this out by finding pattern in a tree of odd length values four levels tall
+	private int squaredSums(int input){ // find the number of extra spaces for the first row of the toString()
 		int ans=1;
 		while(input>1){
 			ans+=Math.pow(2,input);
@@ -258,8 +258,7 @@ public class BinarySearchTree
 		return ans;
 	}
 
-	private String toString(TreeNode tree, TreeNode[] row) // level order approach using an array instead
-	{
+	private String toString(TreeNode tree, TreeNode[] row){ // level order approach using an array instead (all spacing numbers found through a pattern identified with a min numLevels of 5)
 		if(tree==null)
 			return "";
 		String ans="";
@@ -296,7 +295,7 @@ public class BinarySearchTree
 			}
 			if(i==0) break; // we are done already
 			ans+="\n";
-			gapSpaces=gapSpaces.substring((int)Math.pow(2,i-2)*maxLength+(int)Math.pow(2,i-1)); // update gap for next row by removing half of the maxLengths and (half of the added nums)-1 (gap pattern is one ahead of spacing pattern)
+			gapSpaces=gapSpaces.substring((int)Math.pow(2,i-2)*maxLength+(int)Math.pow(2,i-1)); // update gap for next row by removing half of the maxLengths and (half of the added nums)-1
 			betweenSpaces=betweenSpaces.substring((int)Math.pow(2,i-1)*maxLength+(int)Math.pow(2,i)); // update the spacing by removing half of the maxLengths and removing current amount of maxLengths from the added num
 			row=nextRow; // move onto the next row
 		}
