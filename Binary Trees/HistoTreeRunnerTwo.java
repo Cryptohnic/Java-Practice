@@ -3,7 +3,7 @@
 
 //Name -
 
-public class HistoTreeRunner
+public class HistoTreeRunnerTwo
 {
 	public static void main(String[] args)
 	{

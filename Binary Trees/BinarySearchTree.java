@@ -22,15 +22,13 @@ public class BinarySearchTree
 	private TreeNode add(Comparable val, TreeNode tree)
 	{
 		if(tree==null)
-			tree=new TreeNode(val);
-		else{
-			Comparable treeValue=tree.getValue();
-			int dirTest=val.compareTo(treeValue);
-			if(dirTest<0)
-				tree.setLeft(add(val, tree.getLeft()));
-			else if(dirTest>=0)
-				tree.setRight(add(val, tree.getRight()));
-		}
+			return new TreeNode(val);
+		Comparable treeValue=tree.getValue();
+		int dirTest=val.compareTo(treeValue);
+		if(dirTest<0)
+			tree.setLeft(add(val, tree.getLeft()));
+		else
+			tree.setRight(add(val, tree.getRight()));
 		return tree;
 	}
 
@@ -183,18 +181,18 @@ public class BinarySearchTree
 	}
 	
 	public boolean search(Comparable value){
-		return search(root,value);
+		return search(value,root);
 	}
 
-	public boolean search(TreeNode tree, Comparable value){
+	public boolean search(Comparable value, TreeNode tree){
 		if(tree!=null){
 			int dirTest=value.compareTo(tree.getValue());
 			if(dirTest==0)
 				return true;
 			else if(dirTest<0)
-				return search(tree.getLeft(),value);
+				return search(value,tree.getLeft());
 			else
-				return search(tree.getRight(),value);
+				return search(value,tree.getRight());
 		}
 		return false;
 	}
@@ -220,21 +218,21 @@ public class BinarySearchTree
 	}
 	
 	public void remove(Comparable value){
-		root=remove(root, value);
+		root=remove(value,root);
 	}
 
-	public TreeNode remove(TreeNode tree, Comparable value){
+	public TreeNode remove(Comparable value, TreeNode tree){
 		if(tree!=null){
 			int dirTest=value.compareTo(tree.getValue());
 			if(dirTest<0) // if its less than the current value go left
-				tree.setLeft(remove(tree.getLeft(),value));
+				tree.setLeft(remove(value,tree.getLeft()));
 			else if(dirTest>0) // if its greater than the current value go right
-				tree.setRight(remove(tree.getRight(),value));
+				tree.setRight(remove(value,tree.getRight()));
 			else{ // if we found the value
 				if(tree.getRight()!=null){ // if it has values to its right, set it to the next smallest value
 					TreeNode successor=minNode(tree.getRight());
 					tree.setValue(successor.getValue());
-					tree.setRight(remove(tree.getRight(),successor.getValue())); // keep replacing with successors until none left
+					tree.setRight(remove(successor.getValue(),tree.getRight())); // keep replacing with successors until none left
 				}
 				else
 					tree=tree.getLeft(); // set it to the left node left over, if there isn't one it will just become null

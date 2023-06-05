@@ -42,7 +42,6 @@ public class BSTreeRunner
       bs.add(67);
       bs.add(68);
       bs.add(69);
-      //bs.add(120);
       out.println("IN ORDER");
       bs.inOrder();
       out.println("PRE ORDER");

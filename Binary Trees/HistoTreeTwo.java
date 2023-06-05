@@ -3,11 +3,11 @@
 
 //Name -
 
-public class HistoTree
+public class HistoTreeTwo
 {
    private TreeNode root;
 
-	public HistoTree( )
+	public HistoTreeTwo( )
 	{
 
 	}
