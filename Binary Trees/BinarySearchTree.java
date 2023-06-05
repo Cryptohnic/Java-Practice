@@ -122,7 +122,7 @@ public class BinarySearchTree
 	{
 		if(tree==null)
         	return 0;
-    	return Math.max(getNumLevels(tree.getLeft()), getNumLevels(tree.getRight()))+1; // traverse the entire tree and find the longest chain
+    	return 1+Math.max(getNumLevels(tree.getLeft()), getNumLevels(tree.getRight())); // traverse the entire tree and find the longest chain
 	}
 
 	public int getNumLeaves()
@@ -147,7 +147,7 @@ public class BinarySearchTree
 	
 	private int getWidth(TreeNode tree) // finds the longest possible traversal length in the tree
 	{
-		return getNumLevels(tree.getLeft())+getNumLevels(tree.getRight())+1;
+		return 1+getNumLevels(tree.getLeft())+getNumLevels(tree.getRight());
 	}
 
 	public int getHeight()
