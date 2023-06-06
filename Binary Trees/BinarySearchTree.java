@@ -243,8 +243,7 @@ public class BinarySearchTree
 	
 	public String toString()
 	{
-		TreeNode[] arr=new TreeNode[]{root};
-		return toString(root,arr);
+		return toString(root,new TreeNode[]{root});
 	}
 
 	private int squaredSums(int input){ // find the number of extra spaces for the formatting of the first row of the toString()
