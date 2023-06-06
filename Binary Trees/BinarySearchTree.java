@@ -229,10 +229,10 @@ public class BinarySearchTree
 			else if(dirTest>0) // if its greater than the current value go right
 				tree.setRight(remove(value,tree.getRight()));
 			else{ // if we found the value
-				if(tree.getRight()!=null){ // if it has values to its right, set it to the next smallest value
+				if(tree.getRight()!=null){ // if it has values to its right, set it to the next largest value
 					TreeNode successor=minNode(tree.getRight());
 					tree.setValue(successor.getValue());
-					tree.setRight(remove(successor.getValue(),tree.getRight())); // keep replacing with successors until none left
+					tree.setRight(remove(successor.getValue(),tree.getRight())); // keep replacing with successors until tree is reordered and none left
 				}
 				else
 					tree=tree.getLeft(); // set it to the left node left over, if there isn't one it will just become null
@@ -247,7 +247,7 @@ public class BinarySearchTree
 		return toString(root,arr);
 	}
 
-	private int squaredSums(int input){ // find the number of extra spaces for the first row of the toString()
+	private int squaredSums(int input){ // find the number of extra spaces for the formatting of the first row of the toString()
 		int ans=1;
 		while(input>1){
 			ans+=Math.pow(2,input);
@@ -256,7 +256,7 @@ public class BinarySearchTree
 		return ans;
 	}
 
-	private String toString(TreeNode tree, TreeNode[] row){ // level order approach using an array instead (all spacing numbers found through a pattern identified with a min numLevels of 5)
+	private String toString(TreeNode tree, TreeNode[] row){ // level order approach using an array instead (all spacing calculations found through a pattern identified with a min numLevels of 5)
 		if(tree==null)
 			return "";
 		String ans="";
@@ -276,7 +276,7 @@ public class BinarySearchTree
 			for(TreeNode currNode : row){ // entire current row
 				Comparable currValue;
 				if(currNode!=null){
-					nextRow[spot++]=currNode.getLeft(); // add the null ones too
+					nextRow[spot++]=currNode.getLeft(); // if it is null it effectively does nothing
 					nextRow[spot++]=currNode.getRight();
 					currValue=currNode.getValue();
 				}
@@ -297,6 +297,6 @@ public class BinarySearchTree
 			betweenSpaces=betweenSpaces.substring((int)Math.pow(2,i-1)*maxLength+(int)Math.pow(2,i)); // update the spacing by removing half of the maxLengths and removing current amount of maxLengths from the added num
 			row=nextRow; // move onto the next row
 		}
-		return ans;
+		return ans+"\n";
 	}
 }
