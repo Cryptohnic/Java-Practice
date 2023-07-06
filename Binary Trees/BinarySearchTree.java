@@ -255,6 +255,7 @@ public class BinarySearchTree
 		return ans;
 	}
 
+	// not perfect
 	private String toString(TreeNode tree, TreeNode[] row){ // level order approach using an array instead (all spacing calculations found through a pattern identified with a min numLevels of 5)
 		if(tree==null)
 			return "";
