@@ -30,6 +30,6 @@ public class ThingTester
 		two.setCount(11);
 		two.setThing(14.12);		
 		System.out.println(two.compareTo(three));	
-		System.out.println(three.compareTo(two));						
+		System.out.println(three.compareTo(two));
 	}
 }

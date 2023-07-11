@@ -34,7 +34,7 @@ public class BSTreeRunner
       out.println(bs.isFull() ? "The tree is full.\n" : "The tree is not full.\n");
       bs=new BinarySearchTree();
       for(int i=0;i<7;i++)
-         bs.add((int)(Math.random()*10+1));
+         bs.add((int)(Math.random()*100+100));
       out.println("IN ORDER");
       bs.inOrder();
       out.println("PRE ORDER");

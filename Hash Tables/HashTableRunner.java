@@ -1,9 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-
 import java.util.Scanner;
 import java.io.File;
 import static java.lang.System.*;

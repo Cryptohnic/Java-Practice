@@ -8,7 +8,7 @@ public class HistoTreeRunnerTwo
 	public static void main(String[] args)
 	{
 		//A A A A B V S E A S A A V S E A
-		HistoTree test = new HistoTree();
+		HistoTreeTwo test = new HistoTreeTwo();
 		test.addData('A');
 		test.addData('A');
 		test.addData('A');
@@ -29,7 +29,7 @@ public class HistoTreeRunnerTwo
 
 
 
-		test = new HistoTree();
+		test = new HistoTreeTwo();
 		test.addData(1);
 		test.addData(2);
 		test.addData(3);
@@ -42,7 +42,7 @@ public class HistoTreeRunnerTwo
 		System.out.println(test);
 
 
-		test = new HistoTree();
+		test = new HistoTreeTwo();
 		test.addData("abc");
 		test.addData("ead");
 		test.addData("xyz");
