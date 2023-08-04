@@ -21,12 +21,13 @@ public class Heap
 	}
 
    public void swapUp(int bot)
-   {	while(bot>0){
+	{
+		while(bot>0){
 			int parentPos=(bot-1)/2;
 			if(list.get(bot)>list.get(parentPos)){
 				swap(parentPos,bot);
 				bot=parentPos;
-			}else return;
+			}else return;	
 		}
    }
 
@@ -34,22 +35,23 @@ public class Heap
 	{
 		list.set(0,list.get(list.size()-1));
 		list.remove(list.size()-1);
-		swapDown(0);
+		swapDown(list.size()-1);
 	}
 
 	public void swapDown(int top)
 	{
-		while(top<list.size()){
-			int fChildIndex=top*2+1;
-			int greaterIndex;
-			if(fChildIndex<list.size()-1)
-				greaterIndex=list.get(fChildIndex)>list.get(fChildIndex+1) ? fChildIndex : fChildIndex+1;
-			else if(fChildIndex<list.size())
-				greaterIndex=fChildIndex;
+		int greaterIndex;
+		int root=0;
+		while(root<top){
+			if(root*2+2<top)
+				greaterIndex=list.get(root*2+1)>list.get(root*2+2) ? root*2+1 : root*2+2;
+			else if(root*2+1<top)
+				greaterIndex=root*2+1;
 			else return;
-			if(list.get(greaterIndex)>list.get(top))
-				swap(top,greaterIndex);
-			top=greaterIndex;
+			if(list.get(greaterIndex)>list.get(root)){
+				swap(root,greaterIndex);
+				root=greaterIndex;
+			}else break;
 		}
 	}
 	
