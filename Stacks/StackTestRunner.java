@@ -1,14 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import static java.lang.System.*;
 
-public class StackTestRunner
-{
-	public static void main ( String[] args )
-	{
+public class StackTestRunner{
+	public static void main ( String[] args ){
 		StackTest s=new StackTest("a b c d e f g h i");
 		out.println(s);
 		s.popEmAll();

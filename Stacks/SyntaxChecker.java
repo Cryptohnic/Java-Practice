@@ -7,29 +7,24 @@ import java.util.Stack;
 import java.util.Map;
 import java.util.HashMap;
 
-public class SyntaxChecker
-{
+public class SyntaxChecker{
 	private String exp;
 	private Stack<Character> symbols;
 
-	public SyntaxChecker()
-	{
+	public SyntaxChecker(){
 		this("");
 	}
 
-	public SyntaxChecker(String s)
-	{
+	public SyntaxChecker(String s){
 		symbols=new Stack<>();
 		setExpression(s);
 	}
 	
-	public void setExpression(String s)
-	{
+	public void setExpression(String s){
 		exp=s;
 	}
 
-	public boolean checkExpression()
-	{
+	public boolean checkExpression(){
 		Map<Character,Character> map=new HashMap<>();
 		map.put('}','{');
 		map.put(']','[');

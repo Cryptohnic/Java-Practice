@@ -1,12 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class NumberTester
-{
-	public static void main(String[] args)
-	{
+public class NumberTester{
+	public static void main(String[] args){
 		Number one = new Number(45);
 		System.out.println(one.hashCode());
 		

@@ -1,19 +1,14 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class HistoTreeTwo
-{
+public class HistoTreeTwo{
    private TreeNode root;
 
-	public HistoTreeTwo( )
-	{
+	public HistoTreeTwo(){
 		root=null;
 	}	
 
-	public void addData(Comparable data)
-	{
+	public void addData(Comparable data){
 		TreeNode currNode=search(data);
 		if(currNode==null) // if we arent in the tree
 			root=add(data,root); // call the add method
@@ -21,8 +16,7 @@ public class HistoTreeTwo
 			((ThingCount)currNode.getValue()).setCount(((ThingCount)currNode.getValue()).getCount()+1);
 	}
 
-	private TreeNode add(Comparable data, TreeNode tree)
-	{
+	private TreeNode add(Comparable data, TreeNode tree){
 		if(tree==null) // once we have reached the end
 			return new TreeNode(new ThingCount(data,1),null,null);
 		int dirTest=data.compareTo(((ThingCount)tree.getValue()).getThing());
@@ -33,13 +27,11 @@ public class HistoTreeTwo
 		return tree; // keep updating back up the tree
 	}
 
-	private TreeNode search(Comparable data)
-	{
+	private TreeNode search(Comparable data){
 		return search(data,root);
 	}
 
-	private TreeNode search(Comparable data, TreeNode tree)
-	{
+	private TreeNode search(Comparable data, TreeNode tree){
 		if(tree==null)
 			return null;
 		int dirTest=data.compareTo(((ThingCount)tree.getValue()).getThing());
@@ -51,13 +43,11 @@ public class HistoTreeTwo
 			return search(data,tree.getRight());
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return toString(root);
 	}
 
-	private String toString(TreeNode tree) // inOrder approach
-	{
+	private String toString(TreeNode tree){ // inOrder approach
 		if(tree==null)
 			return "";
 		return ""+toString(tree.getLeft())+" "+tree.getValue()+" "+toString(tree.getRight());

@@ -3,10 +3,8 @@
 
 import static java.lang.System.*;
 
-public class ListFunHouseTwoRunner
-{
-	public static void main ( String[] args )
-	{
+public class ListFunHouseTwoRunner{
+	public static void main(String[] args){
 		ListFunHouseTwo funHouse = new ListFunHouseTwo(); 
 		
 		funHouse.add("go");

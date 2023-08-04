@@ -1,12 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class HistoTreeRunnerTwo
-{
-	public static void main(String[] args)
-	{
+public class HistoTreeRunnerTwo{
+	public static void main(String[] args){
 		//A A A A B V S E A S A A V S E A
 		HistoTreeTwo test = new HistoTreeTwo();
 		test.addData('A');

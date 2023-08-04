@@ -1,10 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class PostFixRunner
-{
-	public static void main ( String[] args )
-	{
+public class PostFixRunner{
+	public static void main ( String[] args ){
 		PostFix test = new PostFix("2 7 + 1 2 + +"); // test differnt PostFix expressions
 		test.solve();
 		System.out.println(test);

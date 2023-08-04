@@ -3,10 +3,8 @@
 
 import static java.lang.System.*;
 
-public class JavaLinkedListRunner
-{
-	public static void main ( String[] args )
-	{
+public class JavaLinkedListRunner{
+	public static void main(String[] args){
 	  JavaLinkedList test = new JavaLinkedList(new int[]{4,5,6,7,8,9,10,11,12,13});
 		out.println(test);
 

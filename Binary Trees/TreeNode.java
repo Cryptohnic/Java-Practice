@@ -1,62 +1,50 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class TreeNode implements Treeable
-{
+public class TreeNode implements Treeable{
 	private Comparable treeNodeValue;
 	private TreeNode leftTreeNode;
 	private TreeNode rightTreeNode;
 
-	public TreeNode( )
-	{
+	public TreeNode( ){
 		treeNodeValue = null;
 		leftTreeNode = null;
 		rightTreeNode = null;
 	}
 
-	public TreeNode(Comparable value)
-	{
+	public TreeNode(Comparable value){
 		treeNodeValue = value;
 		leftTreeNode = null;
 		rightTreeNode = null;
 	}
 
-	public TreeNode(Comparable value, TreeNode left, TreeNode right)
-	{
+	public TreeNode(Comparable value, TreeNode left, TreeNode right){
 		treeNodeValue = value;
 		leftTreeNode = left;
 		rightTreeNode = right;
 	}
 
-	public Comparable getValue()
-	{
+	public Comparable getValue(){
 		return treeNodeValue;
 	}
 
-	public TreeNode getLeft()
-	{
+	public TreeNode getLeft(){
 		return leftTreeNode;
 	}
 
-	public TreeNode getRight()
-	{
+	public TreeNode getRight(){
 		return rightTreeNode;
 	}
 
-	public void setValue(Comparable value)
-	{
+	public void setValue(Comparable value){
 		treeNodeValue = value;
 	}
 
-	public void setLeft(Treeable left)
-	{
+	public void setLeft(Treeable left){
 		leftTreeNode = (TreeNode)left;
 	}
 
-	public void setRight(Treeable right)
-	{
+	public void setRight(Treeable right){
 		rightTreeNode = (TreeNode)right;
 	}
 }

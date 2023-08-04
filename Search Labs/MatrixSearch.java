@@ -1,8 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class MatrixSearch
-{
+public class MatrixSearch{
     private int[][] mat;
 		/*
 		 *pre - mat is null

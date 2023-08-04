@@ -7,10 +7,8 @@
 
 import static java.lang.System.*;
 
-public class IntStackRunner
-{
-	public static void main(String[] args)
-	{
+public class IntStackRunner{
+	public static void main(String[] args){
 		IntStack test = new IntStack();
 		test.push(5);
 		test.push(7);

@@ -1,15 +1,11 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class Part implements Comparable<Part>
-{
+public class Part implements Comparable<Part>{
 	private String make, model, rest;
 	private int year;
 
-	public Part(String line)
-	{
+	public Part(String line){
 		String[] list = line.split(" ");
 		make=list[list.length-3];
 		model=list[list.length-2];
@@ -18,8 +14,7 @@ public class Part implements Comparable<Part>
 	}
 
 	// have to have compareTo if implements Comparable
-	public int compareTo(Part rhs)
-	{
+	public int compareTo(Part rhs){
 		if(make.equals(rhs.make)){
 			if(model.equals(rhs.model)){
 				if(year==rhs.year)
@@ -31,8 +26,7 @@ public class Part implements Comparable<Part>
 		return make.compareTo(rhs.make);
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return make+" "+model+" "+year+"  "+rest;
 	}
 }

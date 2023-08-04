@@ -1,29 +1,23 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Scanner;
 
-public class Acronyms
-{
+public class Acronyms{
 	private Map<String,String> acronymTable;
 
-	public Acronyms()
-	{
+	public Acronyms(){
 		acronymTable=new TreeMap<>();
 	}
 
-	public void putEntry(String entry)
-	{
+	public void putEntry(String entry){
 		String[] text=entry.split(" - ");
 		acronymTable.put(text[0],text[1]);
 	}
 
-	public String convert(String sent)
-	{
+	public String convert(String sent){
 		Scanner chop = new Scanner(sent);
 		String output="";
 		while(chop.hasNext()){
@@ -43,8 +37,7 @@ public class Acronyms
 		return output;
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return "====\tMAP CONTENTS\t====\n\n"+acronymTable.toString()+"\n\n";
 	}
 }

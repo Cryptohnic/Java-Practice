@@ -1,24 +1,20 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class Convert
-{
+public class Convert{
 	private String sentence;
 	private String binary;
 
-	public Convert()
-	{
+	public Convert(){
 		this("");
 	}
 
-	public Convert(String sentence)
-	{
+	public Convert(String sentence){
 		this.sentence=sentence;
 		binary="";
 	}
 
-	public void convert()
-	{
+	public void convert(){
 		for(char c : sentence.toCharArray()){ // loop through each character
 			int letter=c; // store its ASCII
 			String base2="";
@@ -30,8 +26,7 @@ public class Convert
 		}
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		convert();
 		return sentence+"\n"+binary+"\n\n";
 	}

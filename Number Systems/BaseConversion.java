@@ -1,26 +1,20 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class BaseConversion
-{
+public class BaseConversion{
 	private String number;
 	private int base;
 
-	public BaseConversion(String num, int b)
-	{
+	public BaseConversion(String num, int b){
 		setNumBase(num,b);
 	}
 
-	public void setNumBase(String num, int b)
-	{	
+	public void setNumBase(String num, int b){	
 		number=num;	
 		base=b;
 	}
 
-	private int convertToTen( )
-	{
+	private int convertToTen(){
 		int q=number.length();
 		int base10=0;
 		for(int i=0;i<q;i++){ // go through each character in given input
@@ -32,8 +26,7 @@ public class BaseConversion
 		return base10;
 	}
 
-	public String getNum(int newBase)
-	{
+	public String getNum(int newBase){
 		int base10 = convertToTen();
 		String newNum="";
 		while(base10>0){
@@ -46,8 +39,7 @@ public class BaseConversion
 		return newNum+"-"+newBase;
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return number+"-"+base;
 	}
 }

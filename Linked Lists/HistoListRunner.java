@@ -3,10 +3,8 @@
 
 import static java.lang.System.*;
 
-public class HistoListRunner
-{
-	public static void main(String[] args)
-	{
+public class HistoListRunner{
+	public static void main(String[] args){
 		//A A A A B V S E A S A A
 		HistoList test = new HistoList();
 		test.addLetter('A');

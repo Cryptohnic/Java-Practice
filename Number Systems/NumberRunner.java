@@ -1,7 +1,5 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-
-//Name -
  
 import java.io.File;
 import java.io.IOException;
@@ -10,10 +8,8 @@ import java.util.Collections;
 import java.util.ArrayList;
 import static java.lang.System.*;
 
-public class NumberRunner
-{
-	public static void main ( String[] args ) throws IOException
-	{
+public class NumberRunner{
+	public static void main ( String[] args ) throws IOException{
 		Scanner s=new Scanner(new File("number.dat"));
 		int times=s.nextInt();
 		ArrayList<Number> numList=new ArrayList<>();

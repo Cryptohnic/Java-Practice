@@ -1,39 +1,32 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import java.util.Queue;
 import java.util.Stack;
 import java.util.LinkedList;
 
-public class PalinList
-{
+public class PalinList{
 	private Queue<String> queue;
 	private Stack<String> stack;
 
-	public PalinList()
-	{
+	public PalinList(){
 		this("");
 	}
 
-	public PalinList(String list)
-	{
+	public PalinList(String list){
 		queue=new LinkedList<>();
 		stack=new Stack<>();
 		setList(list);
 	}
 
-	public void setList(String list)
-	{
+	public void setList(String list){
 		for(String s : list.split(" ")){ // add everything to both the stack and the queue
 			stack.push(s);
 			queue.add(s);
 		}
 	}
 
-	public boolean isPalin()
-	{
+	public boolean isPalin(){
 		int times=stack.size()/2;
 		for(int i=0;i<times;i++)
 			if(!stack.pop().equals(queue.remove())) // if it isn't the same in the front and the back

@@ -1,12 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class ThingCountRunner
-{
-	public static void main(String[] args)
-	{
+public class ThingCountRunner{
+	public static void main(String[] args){
 		ThingCount one = new ThingCount();
 		ThingCount two = new ThingCount('A',5);
 		

@@ -3,10 +3,8 @@
 
 import static java.lang.System.*;
 
-public class ListFunHouseRunner
-{
-	public static void main(String[] args)
-	{
+public class ListFunHouseRunner{
+	public static void main(String[] args){
 		ListNode z = new ListNode("go",new ListNode("on", // instantiate the ListNode LinkedList
 		      		new ListNode("at",
 			 		new ListNode("2.1",

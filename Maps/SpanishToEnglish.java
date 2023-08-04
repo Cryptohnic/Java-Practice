@@ -1,29 +1,23 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Scanner;
 
-public class SpanishToEnglish
-{
+public class SpanishToEnglish{
 	private Map<String,String> pairs;
 
-	public SpanishToEnglish()
-	{
+	public SpanishToEnglish(){
 		pairs=new TreeMap<>();
 	}
 
-	public void putEntry(String entry)
-	{
+	public void putEntry(String entry){
 		String[] text=entry.split(" ");
 		pairs.put(text[0],text[1]);
 	}
 
-	public String translate(String sent)
-	{
+	public String translate(String sent){
 		Scanner chop = new Scanner(sent);
 		String output="";
 		while(chop.hasNext()){
@@ -42,8 +36,7 @@ public class SpanishToEnglish
 		return output;
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return "====\tMAP CONTENTS\t====\n\n"+pairs.toString()+"\n\n";
 	}
 }

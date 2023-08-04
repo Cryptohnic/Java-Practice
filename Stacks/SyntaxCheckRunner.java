@@ -3,10 +3,8 @@
 
 import static java.lang.System.*;
 
-public class SyntaxCheckRunner
-{
-	public static void main ( String[] args )
-	{
+public class SyntaxCheckRunner{
+	public static void main ( String[] args ){
 		SyntaxChecker sc=new SyntaxChecker("(abc(*def)");
 		out.println(sc);
 		sc=new SyntaxChecker("[{}]");

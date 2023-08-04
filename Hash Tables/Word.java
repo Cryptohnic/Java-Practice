@@ -5,8 +5,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.HashSet;
 
-public class Word
-{
+public class Word{
 	private String theValue;
 	
 	//write a constructor method

@@ -1,8 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class ListFunHouseTwo
-{
+public class ListFunHouseTwo{
 	private ListNode theList;
 	
 	public ListFunHouseTwo(){
@@ -26,15 +25,13 @@ public class ListFunHouseTwo
 		
 	//this method will create a new node with the same value as the first node and add this
 	//new node at the front of the list.  Once finished, the first node will occur twice.
-	public void doubleFirst()
-	{
+	public void doubleFirst(){
 		theList=new ListNode(theList.getValue(),theList); // set the next value to the first's value and storing the next Node to double the first
 	}
 
 	//this method will create a new node with the same value as the last node and add this
 	//new node at the end.  Once finished, the last node will occur twice.
-	public void doubleLast()
-	{
+	public void doubleLast(){
 		ListNode temp=theList;
 		while(temp.getNext()!=null) // traverse to the last Node
 			temp=temp.getNext();
@@ -42,8 +39,7 @@ public class ListFunHouseTwo
 	}
 	
 	//method skipEveryOther will remove every other node
-	public void skipEveryOther()
-	{
+	public void skipEveryOther(){
 		ListNode temp=theList;
 		while(temp!=null && temp.getNext()!=null){ // if we have two values left, skip the next value
 			temp.setNext(temp.getNext().getNext());
@@ -52,8 +48,7 @@ public class ListFunHouseTwo
 	}
 
 	//this method will set the value of every xth node in the list
-	public void setXthNode(int x, Comparable value)
-	{
+	public void setXthNode(int x, Comparable value){
 		int count=1; // count the first Node
 		ListNode temp=theList; 
 		while(temp!=null){ 
@@ -68,8 +63,7 @@ public class ListFunHouseTwo
 	}	
 
 	//this method will remove every xth node in the list
-	public void removeXthNode(int x)
-	{
+	public void removeXthNode(int x){
 		int count=1; // count the first Node
 		ListNode temp=theList; 
 		while(temp!=null){ 
@@ -81,12 +75,10 @@ public class ListFunHouseTwo
 				temp.setNext(temp.getNext().getNext()); // skip the second
 			count=0;
 		}
-
-	
 	}		
+	
 	//this method will return a String containing the entire list
-	public String toString()
-    {
+	public String toString(){
 		String output="";
 		ListNode temp=theList;
 		while(temp!=null){

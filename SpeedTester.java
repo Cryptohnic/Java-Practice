@@ -1,5 +1,5 @@
 import java.util.Arrays;
-public class EmptyTester{
+public class SpeedTester{
     public static void main(String[] args){
         long avg=0;
         long startTime=0;

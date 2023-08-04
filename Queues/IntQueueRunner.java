@@ -7,10 +7,8 @@
 //array of ints  
 
 
-public class IntQueueRunner
-{
-	public static void main ( String[] args )
-	{
+public class IntQueueRunner{
+	public static void main ( String[] args ){
 		IntQueue test = new IntQueue();
 		test.add(5);
 		test.add(7);

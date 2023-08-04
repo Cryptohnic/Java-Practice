@@ -5,10 +5,8 @@ import java.util.Scanner;
 import java.io.File;
 import static java.lang.System.*;
 
-public class HashTableRunner
-{
-  public static void main ( String[] args )
-  {
+public class HashTableRunner{
+  public static void main ( String[] args ){
 		try{
 			Scanner s=new Scanner(new File("numbers.dat"));
 			int times=s.nextInt();

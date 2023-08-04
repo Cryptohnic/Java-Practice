@@ -1,8 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
@@ -10,17 +8,14 @@ import java.util.TreeMap;
 import java.util.Scanner;
 import static java.lang.System.*;
 
-public class PartList
-{
+public class PartList{
 	private TreeMap<Part, Integer> partsMap;
 	
-	public PartList()
-	{
+	public PartList(){
 		partsMap=new TreeMap<>();
 	}
 	
-	public PartList(String fileName)
-	{
+	public PartList(String fileName){
 		this();
 		try
 		{
@@ -54,8 +49,7 @@ public class PartList
 		}
 	}
 	
-	public String toString()
-	{
+	public String toString(){
 		String output="";
 		for(Map.Entry<Part,Integer> entry : partsMap.entrySet()) // formatting
 			output+=entry.getKey()+" - "+entry.getValue()+"\n";

@@ -5,22 +5,18 @@ import static java.lang.System.out;
 import java.util.Queue;
 import java.util.LinkedList;
 
-public class BinarySearchTree
-{
+public class BinarySearchTree{
 	private TreeNode root;
 
-	public BinarySearchTree()
-	{
+	public BinarySearchTree(){
 		root=null;
 	}
 
-	public void add(Comparable val)
-	{
+	public void add(Comparable val){
 		root=add(val,root);
 	}
 
-	private TreeNode add(Comparable val, TreeNode tree)
-	{
+	private TreeNode add(Comparable val, TreeNode tree){
 		if(tree==null)
 			return new TreeNode(val);
 		Comparable treeValue=tree.getValue();
@@ -32,14 +28,12 @@ public class BinarySearchTree
 		return tree;
 	}
 
-   	public void inOrder()
-	{
+   	public void inOrder(){
 		inOrder(root);
 		out.println("\n\n");
 	}
 
-	private void inOrder(TreeNode tree) // all left values first then all right values
-	{
+	private void inOrder(TreeNode tree){ // all left values first then all right values
 		if (tree!=null){
 			inOrder(tree.getLeft());
 			out.print(tree.getValue()+" ");
@@ -47,14 +41,12 @@ public class BinarySearchTree
 		}
 	}
 
-	public void preOrder()
-	{
+	public void preOrder(){
 		preOrder(root);
 		out.println("\n\n");
 	}
 	
-	private void preOrder(TreeNode tree) // returns the values in a possible arrangement of how they were added
-	{
+	private void preOrder(TreeNode tree){ // returns the values in a possible arrangement of how they were added
 		if(tree!=null){
 			out.print(tree.getValue()+" ");
 			preOrder(tree.getLeft());
@@ -62,14 +54,12 @@ public class BinarySearchTree
 		}
 	}
 
-	public void postOrder()
-	{
+	public void postOrder(){
 		postOrder(root);
 		out.println("\n\n");
 	}
 	
-	private void postOrder(TreeNode tree) // go to the left and then start going to the right until you have to go up
-	{
+	private void postOrder(TreeNode tree){ // go to the left and then start going to the right until you have to go up
 		if(tree!=null){
 			postOrder(tree.getLeft());
 			postOrder(tree.getRight());
@@ -77,16 +67,14 @@ public class BinarySearchTree
 		}
 	}
 
-	public void levelOrder()
-	{
+	public void levelOrder(){
 		Queue<TreeNode> queue=new LinkedList<>();
 		queue.add(root);
 		levelOrder(queue);
 		out.println("\n\n");
 	}
 	
-	private void levelOrder(Queue<TreeNode> queue)
-	{
+	private void levelOrder(Queue<TreeNode> queue){
 		if(queue.isEmpty())
 			return;
 		TreeNode node=queue.remove();
@@ -98,14 +86,12 @@ public class BinarySearchTree
 		levelOrder(queue); // since queues are FIFO it just does every nodes left and right in order
 	}
 	
-	public void reverseOrder()
-	{
+	public void reverseOrder(){
 		reverseOrder(root);
 		out.println("\n\n");
 	}
 
-	private void reverseOrder(TreeNode tree) // start at the bottom right and then print any children to its left repeated
-	{
+	private void reverseOrder(TreeNode tree){ // start at the bottom right and then print any children to its left repeated
 		if(tree!=null){
 			reverseOrder(tree.getRight());
 			out.print(tree.getValue()+" ");
@@ -113,25 +99,21 @@ public class BinarySearchTree
 		}
 	}
 	
-	public int getNumLevels()
-	{
+	public int getNumLevels(){
 		return getNumLevels(root);
 	}
 
-	private int getNumLevels(TreeNode tree)
-	{
+	private int getNumLevels(TreeNode tree){
 		if(tree==null)
         	return 0;
     	return 1+Math.max(getNumLevels(tree.getLeft()), getNumLevels(tree.getRight())); // traverse the entire tree and find the longest chain
 	}
 
-	public int getNumLeaves()
-	{
+	public int getNumLeaves(){
 		return getNumLeaves(root);
 	}
 	
-	private int getNumLeaves(TreeNode tree)
-	{
+	private int getNumLeaves(TreeNode tree){
 		if(tree==null)
 			return 0;
 		else if(tree.getLeft()==null && tree.getRight()==null) // if no children add one
@@ -140,23 +122,19 @@ public class BinarySearchTree
 			return getNumLeaves(tree.getLeft())+getNumLeaves(tree.getRight()); // traverse the whole tree
 	}
 
-	public int getWidth()
-	{
+	public int getWidth(){
 		return getWidth(root);
 	}
 	
-	private int getWidth(TreeNode tree) // finds the longest possible traversal length in the tree
-	{
+	private int getWidth(TreeNode tree){ // finds the longest possible traversal length in the tree
 		return 1+getNumLevels(tree.getLeft())+getNumLevels(tree.getRight());
 	}
 
-	public int getHeight()
-	{
+	public int getHeight(){
 		return getHeight(root);
 	}
 	
-	private int getHeight(TreeNode tree) // height is literally just minus 1
-	{
+	private int getHeight(TreeNode tree){ // height is literally just minus 1
 		return getNumLevels(tree)-1;
 	}
 	
@@ -170,13 +148,11 @@ public class BinarySearchTree
 			return 1+getNumNodes(tree.getLeft())+getNumNodes(tree.getRight()); // adds one for each node and traverses recursively
 	}
 
-	public boolean isFull()
-	{
+	public boolean isFull(){
 		return isFull(root);
 	}
 
-	private boolean isFull(TreeNode tree) // if 2^levels-1==number of nodes tree is full
-	{
+	private boolean isFull(TreeNode tree){ // if 2^levels-1==number of nodes tree is full
 		return Math.pow(2,getNumLevels())-1==getNumNodes();
 	}
 	
@@ -241,8 +217,7 @@ public class BinarySearchTree
 		return tree;
 	}
 	
-	public String toString()
-	{
+	public String toString(){
 		return toString(root,new TreeNode[]{root});
 	}
 

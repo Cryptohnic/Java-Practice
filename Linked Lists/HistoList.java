@@ -1,20 +1,16 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class HistoList
-{
+public class HistoList{
    private HistoNode front;
 
-	public HistoList( )
-	{
+	public HistoList(){
 		front = null;
 	}
 
 	//addLetter will add a new node to the front for let if let does not exist
 	//addLetter will bump up the count if let already exists
-	public void addLetter(char let)
-	{
-
+	public void addLetter(char let){
 		int index=indexOf(let);
 		if(indexOf(let)!=-1){ // if a node already exists
 			HistoNode current=nodeAt(index);
@@ -25,8 +21,7 @@ public class HistoList
 	}
 
 	//returns the index pos of let in the list if let exists
-	public int indexOf(char let)
-	{
+	public int indexOf(char let){
 		int spot=0;
 		HistoNode temp=front;
 		while(temp!=null){ // loop through the list
@@ -41,8 +36,7 @@ public class HistoList
 	}
 
 	//returns a reference to the node at spot
-	private HistoNode nodeAt(int spot)
-	{
+	private HistoNode nodeAt(int spot){
 		HistoNode current=front;
 		for(int i=0;i<spot;i++) // go to that node
 			current=current.getRight();
@@ -50,8 +44,7 @@ public class HistoList
 	}
 
 	//returns a string will all values from list
-	public String toString()
-	{
+	public String toString(){
 		String output = "";
 		while(front!=null){ // formatting
 			output+=front.getData()+" - "+front.getDataCount()+"\t";

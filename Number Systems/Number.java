@@ -1,16 +1,11 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class Number implements Comparable<Number>
-{
-
-	//add in instance variables
+public class Number implements Comparable<Number>{
+	
 	String number;
 	Integer base10;
 	String binary;
-	//add in a constructor or two
 
 	public Number(String num, int b){
 		number=num;
@@ -18,7 +13,6 @@ public class Number implements Comparable<Number>
 		binary=Integer.toString(base10,2);
 	}
 
-	@Override
 	public int compareTo(Number param)
 	{
 		int currOnes=binary.replaceAll("0","").length();
@@ -34,9 +28,7 @@ public class Number implements Comparable<Number>
 			return -1;
 	}
 	
-	@Override
-	public String toString( )
-	{
+	public String toString( ){
 	  return number+" "+base10+" "+binary;
 	}
 }

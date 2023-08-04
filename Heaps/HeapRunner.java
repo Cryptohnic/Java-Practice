@@ -1,10 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class HeapRunner
-{
-	public static void main (String[] args)
-	{
+public class HeapRunner{
+	public static void main (String[] args){
 		Heap heap = new Heap();
 
 		heap.add(1);

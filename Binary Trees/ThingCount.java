@@ -1,59 +1,47 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class ThingCount implements Comparable
-{
+public class ThingCount implements Comparable{
 	private int count;
 	private Object thing;
 	
-	public ThingCount()
-	{
+	public ThingCount(){
 		count=0;
 		thing=null;
 	}
 	
-	public ThingCount(Object thang, int cnt)
-	{
+	public ThingCount(Object thang, int cnt){
 		thing=thang;
 		count=cnt;
 	}
 
-	public void setThing(Object obj)
-	{
+	public void setThing(Object obj){
 		thing=obj;
 	}
 	
-	public void setCount(int cnt)
-	{
+	public void setCount(int cnt){
 		count=cnt;
 	}
 	
-	public Object getThing()
-	{
+	public Object getThing(){
 		return thing;
 	}
 
-	public int getCount()
-	{
+	public int getCount(){
 		return count;
 	}
 	
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj){
 		ThingCount other = (ThingCount)obj;
 		return other!=null ? thing.equals(other.getThing()) && count==other.getCount() : false;
 	}
 	
-	public int compareTo(Object obj)
-	{
+	public int compareTo(Object obj){
 		ThingCount other = (ThingCount)obj;
 		return other!=null ? ((Comparable)thing).compareTo(other.getThing()) : -1;		
 	}
 	
-	public String toString()
-	{
+	public String toString(){
 		return ""+thing + " - " + count;
 	}
 }

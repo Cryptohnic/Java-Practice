@@ -1,14 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
 import static java.lang.System.*;
 
-public class PalinListRunner
-{
-	public static void main ( String[] args )
-	{
+public class PalinListRunner{
+	public static void main ( String[] args ){
 		PalinList pl=new PalinList("one two three two one");
 		out.println(pl);
 		pl=new PalinList("1 2 3 4 5 one two three four five");
