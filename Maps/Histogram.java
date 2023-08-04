@@ -22,7 +22,7 @@ public class Histogram{
     	for(Map.Entry<String, Integer> entry : histogram.entrySet()){ // formatting
         	String key = entry.getKey();
         	int value = entry.getValue();
-			String stars="";
+			String stars="";	
 			for(int i=0;i<value;i++)
 				stars+="*";
         	output+=key+"\t"+stars+"\n";

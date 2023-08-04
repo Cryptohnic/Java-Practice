@@ -1,12 +1,8 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-
-public class WordTester
-{
-	public static void main(String[] args)
-	{
+public class WordTester{
+	public static void main(String[] args){
 		Word one = new Word("45alligator");
 		System.out.println(one.hashCode());		//should out 4
 		
