@@ -1,8 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-import static java.lang.System.*; 
-
 public class RomanNumeral implements Comparable<RomanNumeral>{
 	private Integer number;
 	private String roman;
