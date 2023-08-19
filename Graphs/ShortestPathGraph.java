@@ -4,8 +4,7 @@
 import java.util.Map;
 import java.util.TreeMap;
 
-public class ShortestPathGraph
-{
+public class ShortestPathGraph{
 	private Map<String, String> map;
 	private boolean found;
 	private int shortest;
@@ -27,9 +26,9 @@ public class ShortestPathGraph
 		shortest=map.size();
 	}
 
-	public boolean contains(String letter){
-		return map.get(letter)!=null;
-	}
+	// public boolean contains(String letter){
+	// 	return map.get(letter)!=null;
+	// }
 
 	public void check(String first, String second, String placesUsed, int steps){
 		if(map.get(first).contains(second)){ // if we found a connection
