@@ -19,8 +19,8 @@ public class Graph{
 				map.put(firstVal,"");
 			if(map.get(secondVal)==null)
 				map.put(secondVal,"");
-			map.put(firstVal,map.get(firstVal)+secondVal);
-			map.put(secondVal,map.get(secondVal)+firstVal);
+			map.put(firstVal,map.get(firstVal)+secondVal); // add on the secondVal to the list of current connections
+			map.put(secondVal,map.get(secondVal)+firstVal); // add on the firstVal to the list of current connections
 		}
 	}
 
@@ -29,14 +29,14 @@ public class Graph{
 	// }
 
 	public void check(String first, String second, String placesUsed){
-		if(map.get(first).contains(second)){
+		if(map.get(first).contains(second)){ // if we found a connection
 			found=true;
 			return;
 		}
 		String currentConnections=map.get(first);
 		for(String connection : currentConnections.split(""))
-			if(!placesUsed.contains(connection))
-				check(connection,second,placesUsed+connection);
+			if(!placesUsed.contains(connection)) // if we haven't checked this connection yet
+				check(connection,second,placesUsed+connection); // check it and add it as a checked position
 	}
 
 	public String toString(){
