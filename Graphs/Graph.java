@@ -2,14 +2,14 @@
 //www.apluscompsci.com
 
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.HashMap;
 
 public class Graph{
 	private Map<String, String> map;
 	private boolean found;
 
 	public Graph(String line){
-		map=new TreeMap<>();
+		map=new HashMap<>();
 		found=false;
 		String[] connections=line.split(" ");
 		for(String connection : connections){

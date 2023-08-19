@@ -2,7 +2,7 @@
 //www.apluscompsci.com
 
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.HashMap;
 
 public class ShortestPathGraph{
 	private Map<String, String> map;
@@ -10,7 +10,7 @@ public class ShortestPathGraph{
 	private int shortest;
 
 	public ShortestPathGraph(String line){
-		map=new TreeMap<>();
+		map=new HashMap<>();
 		found=false;
 		String[] connections=line.split(" ");
 		for(String connection : connections){
