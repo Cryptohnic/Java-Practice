@@ -1,13 +1,10 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
 
 import static java.lang.System.*;
 
-public class MonsterRunner
-{
-   public static void main( String args[] )
-   {
+public class MonsterRunner{
+   public static void main(String args[]){
 		Monster zero = new Monster();
 		Monster one = new Monster(8);
 		Monster sue = new Monster(9, 4);

@@ -1,6 +1,5 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
 
 import java.io.File;
 import java.io.IOException;
