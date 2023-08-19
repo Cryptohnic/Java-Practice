@@ -9,17 +9,15 @@ public class Word implements Comparable<Word>{
 		word=s;
 	}
 
-	public String getWord(){
-		return word;
-	}
-
 	public int compareTo(Word rhs){		
-		if(word.length()<rhs.getWord().length())
+		int wordLength=word.length();
+		int rhsLength=rhs.word.length();
+		if(wordLength<rhsLength)
 			return -1;
-		else if(word.length()>rhs.getWord().length())
+		else if(wordLength>rhsLength)
 			return 1;
 		else
-			return word.compareTo(rhs.getWord());
+			return word.compareTo(rhs.word);
 	}
 
 	public String toString(){
