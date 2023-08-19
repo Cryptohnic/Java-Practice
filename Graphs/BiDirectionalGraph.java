@@ -10,26 +10,23 @@ import java.util.TreeSet;
 import java.util.Scanner;
 import static java.lang.System.*;
 
-public class BiDirectionalGraph
-{
+public class BiDirectionalGraph{
 	private TreeMap<String, TreeSet<String>> map;
 	private boolean found;
 
-	public BiDirectionalGraph(String line)
-	{
+	public BiDirectionalGraph(String line){
+
 	}
 
-	public boolean contains(String name)
-	{
+	public boolean contains(String name){
 		return true;
 	}
 
-	public void check(String first, String second, TreeSet<String> placedUsed)
-	{
+	public void check(String first, String second, TreeSet<String> placedUsed){
+		
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return "";
 	}
 }
