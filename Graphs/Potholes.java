@@ -40,7 +40,11 @@ public class Potholes{
             shortestDistance.put(vertex,new HashMap<>());
             shortestDistance.get(vertex).put("",Integer.MAX_VALUE);
         }
+        calculate("");
+	}
 
+    private void calculate(String placesUsed){
+        
 	}
 
     public String toString(){
