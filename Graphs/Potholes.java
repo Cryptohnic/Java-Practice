@@ -3,13 +3,15 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class Potholes{
+    String beginning;
     String destination;
     String shortestPath;
     int distance;
     Map<String,Map<String,Integer>> directDistance;
-    Map<String,Map<String,Integer>> shortestDistance;
+    Map<String,String[]> shortestDistance;
 
-    public Potholes(String end){
+    public Potholes(String start,String end){
+        beginning=start;
         destination=end;
         shortestPath="";
         distance=Integer.MAX_VALUE;
@@ -30,22 +32,17 @@ public class Potholes{
         directDistance.get(secondVertex).put(firstVertex,weight);
     }
 
-    public void shortestPath(String end){
-        shortestPath();
-
-    }
-
     private void shortestPath(){
 		for(String vertex : directDistance.keySet()){
-            shortestDistance.put(vertex,new HashMap<>());
-            shortestDistance.get(vertex).put("",Integer.MAX_VALUE);
+            shortestDistance.put(vertex,new String[2]);
+            shortestDistance.get(vertex)[0]="";
         }
-        calculate("");
+        calculate();
 	}
 
-    private void calculate(String placesUsed){
+    private void calculate(){
         
-	}
+    }
 
     public String toString(){
         return shortestPath;
