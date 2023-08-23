@@ -4,18 +4,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Potholes{
-    String beginning;
-    String destination;
     String shortestPath;
-    int distance;
     Map<String,Map<String,Integer>> connections;
     Map<String,Map<String,Integer>> shortestDistance;
 
-    public Potholes(String start,String end){
-        beginning=start;
-        destination=end;
+    public Potholes(){
         shortestPath="";
-        distance=Integer.MAX_VALUE;
         connections=new HashMap<>();
         shortestDistance=new HashMap<>();
     }
@@ -33,15 +27,15 @@ public class Potholes{
         connections.get(secondVertex).put(firstVertex,weight);
     }
 
-    private void shortestPath(){ // implements Djikstra's algorithm
+    private void shortestPath(String start, String end){ // implements Djikstra's algorithm
 		for(String vertex : connections.keySet()){
             shortestDistance.put(vertex,new HashMap<>());
             shortestDistance.get(vertex).put("",Integer.MAX_VALUE);
         }
-        shortestDistance.get(beginning).put("",0);
+        shortestDistance.get(start).put("",0);
         List<String> unvisited=new ArrayList<>(shortestDistance.keySet());
-        unvisited.remove(beginning);
-        String previousNode=beginning;  
+        unvisited.remove(start);
+        String previousNode=start;  
         while(unvisited.size()>0){
             int closestDistance=Integer.MAX_VALUE;
             String closestNode="";
