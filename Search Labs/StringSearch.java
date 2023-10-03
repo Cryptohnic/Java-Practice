@@ -10,8 +10,7 @@ public class StringSearch{
 		return count;
 	}
 
-	public static int countLetters(String sent,char letter)
-	{
+	public static int countLetters(String sent,char letter){
 		int count=0;
 		for(char c : sent.toCharArray())
 			if(c==letter) // is the character equals the letter input
