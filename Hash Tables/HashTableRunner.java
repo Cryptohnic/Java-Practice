@@ -6,7 +6,7 @@ import java.io.File;
 import static java.lang.System.*;
 
 public class HashTableRunner{
-  public static void main ( String[] args ){
+  public static void main(String[] args){
 		try{
 			Scanner s=new Scanner(new File("numbers.dat"));
 			int times=s.nextInt();
@@ -21,8 +21,7 @@ public class HashTableRunner{
 				ht.add(new Word(s.next()));
 			out.println(ht);
 		}
-		catch(Exception e)
-		{
+		catch(Exception e){
 			System.out.println("Houston, we have a problem!");
 		}
   }
