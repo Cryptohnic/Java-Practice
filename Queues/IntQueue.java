@@ -1,31 +1,31 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//ArrayList of ints
+//ArrayList of ints -> LinkedList is better O()
 //or
 //array of ints
 
-import java.util.Arrays;
+import java.util.List;
+import java.util.LinkedList;
 
 public class IntQueue{
-	//option 1
-	private int[] rayOfInts;
+	//option 2
+	private List<Integer> rayOfInts;
 	private int numInts;
 
 	public IntQueue(){
-		rayOfInts=new int[0]; // create a new empty array
+		rayOfInts=new LinkedList(); // create a new empty list
 		numInts=0; // set its length instance variable to zero
 	}
 
 	public void add(int item){
-		rayOfInts=Arrays.copyOf(rayOfInts,++numInts); // create a copy that is one longer
-		rayOfInts[numInts-1]=item; // set the last vale in the list to item
+		rayOfInts.add(item);
+		numInts++;
 	}
 
 	public int remove(){
-		int val=rayOfInts[0]; // store the first value
-		rayOfInts=Arrays.copyOfRange(rayOfInts,1,numInts--); // delete it
-		return val;
+		numInts--;
+		return rayOfInts.remove(0);
 	}
 
 	public boolean isEmpty(){
@@ -33,10 +33,10 @@ public class IntQueue{
 	}
 
 	public int peek(){
-		return rayOfInts[0]; // FIFO
+		return rayOfInts.get(0); // FIFO
 	}
 
 	public String toString(){
-		return Arrays.toString(rayOfInts);
+		return rayOfInts.toString();
 	}
 }
