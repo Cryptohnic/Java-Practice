@@ -12,7 +12,7 @@ public class PotholesRunner {
         while(sc.hasNextLine()){
             String line=sc.nextLine();
             if(line.length()<2){
-                ph.shortestPath("A",destination,"",0,0);
+                //ph.shortestPath("A",destination,"",0,0);
                 System.out.println(ph);
                 ph=new Potholes(line);
             }else
