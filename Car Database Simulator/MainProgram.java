@@ -30,15 +30,14 @@ public class MainProgram{
                     input=s.nextLine();
                     System.out.println("\n"+fleet.search(input));
                     continue;
-                case "4": // update all cars of same make and model if want to
+                case "4": // update cars of same make and model
                     System.out.print("Which make and model would you like to search for to see all matches in our fleet that you wish to change?: ");
                     String changeMakeAndModel=s.nextLine();
                     FleetOfCars toChange=fleet.search(changeMakeAndModel);
                     int numOfChangeable=toChange.getSize();
                     if(numOfChangeable==0)
                         continue;
-                    System.out.println("\n"+toChange);
-                    System.out.print("\nOf the "+numOfChangeable+" cars, how many would you like to change?: ");
+                    System.out.print("\n"+toChange+"\n\nOf the "+numOfChangeable+" cars, how many would you like to change?: ");
                     int wantedNum=s.nextInt();
                     if(wantedNum>numOfChangeable)
                         throw new Error("You cannot change more cars than the number that exist in the outputted list above.");
