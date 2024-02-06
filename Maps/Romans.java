@@ -4,28 +4,30 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class Romans{
-	private Map<String,Integer> m;
-	
-	public Romans(){
-		m = new HashMap<String, Integer>(); // create a map of keys and values. This wont be an accurate program for calculating roman numerals
-		m.put("I",1);
-		m.put("V", 5);
-		m.put("X", 10);
-		m.put("L", 50);
-		m.put("C", 100);
-		m.put("D", 500);
-		m.put("M", 1000);					
-	}
-	
-	public int getNumber(String s){
-		return m.get(s);
-	}
+public class Romans {
 
-	public int getTotal(String s){
-		int tot=0;
-		for(String c:s.split(" "))
-			tot+=getNumber(c);
-		return tot;
-	}
+    private Map<String, Integer> m;
+
+    public Romans() {
+        m = new HashMap<String, Integer>(); // create a map of keys and values. This wont be an accurate program for calculating roman numerals
+        m.put("I", 1);
+        m.put("V", 5);
+        m.put("X", 10);
+        m.put("L", 50);
+        m.put("C", 100);
+        m.put("D", 500);
+        m.put("M", 1000);
+    }
+
+    public int getNumber(String s) {
+        return m.get(s);
+    }
+
+    public int getTotal(String s) {
+        int tot = 0;
+        for (String c : s.split(" ")) {
+            tot += getNumber(c);
+        }
+        return tot;
+    }
 }

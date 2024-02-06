@@ -1,53 +1,51 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-public class HistoTreeRunnerTwo{
-	public static void main(String[] args){
-		//A A A A B V S E A S A A V S E A
-		HistoTreeTwo test = new HistoTreeTwo();
-		test.addData('A');
-		test.addData('A');
-		test.addData('A');
-		test.addData('A');
-		test.addData('B');
-		test.addData('V');
-		test.addData('S');
-		test.addData('E');
-		test.addData('A');
-		test.addData('S');
-		test.addData('A');
-		test.addData('A');
-		test.addData('V');
-		test.addData('S');
-		test.addData('E');
-		test.addData('A');
-		System.out.println(test);
+public class HistoTreeRunnerTwo {
 
+    public static void main(String[] args) {
+        //A A A A B V S E A S A A V S E A
+        HistoTreeTwo test = new HistoTreeTwo();
+        test.addData('A');
+        test.addData('A');
+        test.addData('A');
+        test.addData('A');
+        test.addData('B');
+        test.addData('V');
+        test.addData('S');
+        test.addData('E');
+        test.addData('A');
+        test.addData('S');
+        test.addData('A');
+        test.addData('A');
+        test.addData('V');
+        test.addData('S');
+        test.addData('E');
+        test.addData('A');
+        System.out.println(test);
 
+        test = new HistoTreeTwo();
+        test.addData(1);
+        test.addData(2);
+        test.addData(3);
+        test.addData(11);
+        test.addData(22);
+        test.addData(32);
+        test.addData(1);
+        test.addData(22);
+        test.addData(13);
+        System.out.println(test);
 
-		test = new HistoTreeTwo();
-		test.addData(1);
-		test.addData(2);
-		test.addData(3);
-		test.addData(11);
-		test.addData(22);
-		test.addData(32);
-		test.addData(1);
-		test.addData(22);
-		test.addData(13);
-		System.out.println(test);
-
-
-		test = new HistoTreeTwo();
-		test.addData("abc");
-		test.addData("ead");
-		test.addData("xyz");
-		test.addData("xyz");
-		test.addData("abc");
-		test.addData("ead");
-		test.addData("abc");
-		test.addData("2342");
-		test.addData("x2y2z");
-		System.out.println(test);
-	}
+        test = new HistoTreeTwo();
+        test.addData("abc");
+        test.addData("ead");
+        test.addData("xyz");
+        test.addData("xyz");
+        test.addData("abc");
+        test.addData("ead");
+        test.addData("abc");
+        test.addData("2342");
+        test.addData("x2y2z");
+        System.out.println(test);
+    }
 }

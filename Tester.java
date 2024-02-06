@@ -1,10 +1,12 @@
+
 import java.util.Arrays;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class Tester{
-    public static void main(String[] args){
+public class Tester {
+
+    public static void main(String[] args) {
         System.out.println(Byte.SIZE);
         System.out.println(Character.SIZE);
         System.out.println(Short.SIZE);
@@ -13,29 +15,25 @@ public class Tester{
         System.out.println(Long.SIZE);
         System.out.println(Double.SIZE);
 
-
         System.out.println("\n\n\n\n");
 
-
-        String s=new String();
-        Object o=new Object();
+        String s = new String();
+        Object o = new Object();
         System.out.println(s);
         System.out.println(o);
-        String[] sarr=new String[3];
-        Object[] oarr=new Object[3];
-        int[] iarr=new int[3];
-        boolean[] barr=new boolean[3];
-        float[] farr=new float[3];
+        String[] sarr = new String[3];
+        Object[] oarr = new Object[3];
+        int[] iarr = new int[3];
+        boolean[] barr = new boolean[3];
+        float[] farr = new float[3];
         System.out.println(Arrays.toString(sarr));
         System.out.println(Arrays.toString(oarr));
         System.out.println(Arrays.toString(iarr));
         System.out.println(Arrays.toString(barr));
         System.out.println(Arrays.toString(farr));
-        
 
         System.out.println("\n\n\n\n");
 
-        
         /*   
             All literals get converted to base 10 during evaluation.
             Chars being assigned a base 10 value will be converted to the ASCII character
@@ -50,33 +48,32 @@ public class Tester{
             You can use a \ before the number to create a literal in octal but only in single quotes
             Strings take in literals as decimals rather than converting them to chars the same way concatenating an-
             int would add an int to the string rather than that int's ASCII character.
-        */ 
-        char A='A';
+         */
+        char A = 'A';
         System.out.println(A);
-        A='\u0041';
+        A = '\u0041';
         System.out.println(A);
-        A=\u0041;
+        A = \u0041;
         System.out.println(A);
-        A=0x41;
+        A = 0x41;
         System.out.println(A);
-        A=65;
+        A = 65;
         System.out.println(A);
-        A=0101;
+        A = 0101;
         System.out.println(A);
-        A='\101';
+        A = '\101';
         System.out.println(A);
-        A=0b1000001;
+        A = 0b1000001;
         System.out.println(A);
-        System.out.println(A==65);
-        System.out.println(A=='\101');
-        System.out.println(A==0101);
-        System.out.println(A==\u0041);
-        System.out.println(A=='A');
-        String B="";
-        B+=0b1000010;
+        System.out.println(A == 65);
+        System.out.println(A == '\101');
+        System.out.println(A == 0101);
+        System.out.println(A == \u0041);
+        System.out.println(A == 'A');
+        String B = "";
+        B += 0b1000010;
         System.out.println(B);
 
-        
         System.out.println("\n\n\n\n");
 
 
@@ -94,51 +91,50 @@ public class Tester{
             EX: a = 0b11111111
                 a>>>1 -> 2147483647 (0b01111111111111111111111111111111 or max value of an int - no longer a byte)
                 a>>>=1 -> -1
-         */ 
+         */
         byte a;
-        a=10;
-        System.out.println(a+=3);
-        a=15;
-        System.out.println(a-=3);
-        a=20;
-        System.out.println(a*=3);
-        a=25;
-        System.out.println(a/=3);
-        a=30;
-        System.out.println(a%=3);
-        a=35;
-        System.out.println(a&=3);
-        a=40;
-        System.out.println(a^=3);
-        a=45;
-        System.out.println(a|=3);
-        a=50;
-        System.out.println(a<<=3);
-        a=55;
-        System.out.println(a>>=3);
-        a=60;
-        System.out.println(a>>>=3);
-        byte b=(byte)0b11111111;
-        System.out.println(b>>>1);
-        System.out.println(b>>>=1);
+        a = 10;
+        System.out.println(a += 3);
+        a = 15;
+        System.out.println(a -= 3);
+        a = 20;
+        System.out.println(a *= 3);
+        a = 25;
+        System.out.println(a /= 3);
+        a = 30;
+        System.out.println(a %= 3);
+        a = 35;
+        System.out.println(a &= 3);
+        a = 40;
+        System.out.println(a ^= 3);
+        a = 45;
+        System.out.println(a |= 3);
+        a = 50;
+        System.out.println(a <<= 3);
+        a = 55;
+        System.out.println(a >>= 3);
+        a = 60;
+        System.out.println(a >>>= 3);
+        byte b = (byte) 0b11111111;
+        System.out.println(b >>> 1);
+        System.out.println(b >>>= 1);
         System.out.println(-0b00000001);
-        System.out.println(false&false);
-        byte c=0b00000001;
+        System.out.println(false & false);
+        byte c = 0b00000001;
         System.out.println(~c);
 
         System.out.println("\n\n\n\n");
 
-        String z="Chuck";
-        String y="Chuck";
-        z=null;
-        System.out.println(z+" "+y);
+        String z = "Chuck";
+        String y = "Chuck";
+        z = null;
+        System.out.println(z + " " + y);
 
         System.out.println("\n\n\n\n");
 
-
-        int[] stuff = {3,4,5,6,11,18,91};
-        System.out.println(Arrays.binarySearch(stuff,5));
-        System.out.println(Arrays.binarySearch(stuff,15));
+        int[] stuff = {3, 4, 5, 6, 11, 18, 91};
+        System.out.println(Arrays.binarySearch(stuff, 5));
+        System.out.println(Arrays.binarySearch(stuff, 15));
 
         System.out.println("\n\n\n\n");
 
@@ -150,51 +146,51 @@ public class Tester{
 
         System.out.println("\n\n\n\n");
 
-        int p=1;
-        int s1=0;
-        for(int x1=0;x1<=8;x1++){
-            s1+=p;
-            p*=2;
-            System.out.println(s1+" : "+p);
+        int p = 1;
+        int s1 = 0;
+        for (int x1 = 0; x1 <= 8; x1++) {
+            s1 += p;
+            p *= 2;
+            System.out.println(s1 + " : " + p);
         }
         System.out.print(s1);
 
-        int x=-234;
-        long reverse=0;
-        boolean works=true;
-        while(x!=0){
-            reverse=reverse*10+x%10; // always adds a negative or a positive depending on sign so it always works
-            if(reverse>Integer.MAX_VALUE || reverse<Integer.MIN_VALUE){
+        int x = -234;
+        long reverse = 0;
+        boolean works = true;
+        while (x != 0) {
+            reverse = reverse * 10 + x % 10; // always adds a negative or a positive depending on sign so it always works
+            if (reverse > Integer.MAX_VALUE || reverse < Integer.MIN_VALUE) {
                 System.out.println(0);
-                works=false;
+                works = false;
                 break;
             }
-            x/=10;
+            x /= 10;
         }
-        if(works)
-            System.out.println((int)reverse);
+        if (works) {
+            System.out.println((int) reverse);
+        }
 
         System.out.println("\n\n\n\n");
 
-        int u=0;
-        int m=0;
-        int val1=1<2 ? u++ : m++;
-        System.out.println("u: "+u+" m: "+m);
+        int u = 0;
+        int m = 0;
+        int val1 = 1 < 2 ? u++ : m++;
+        System.out.println("u: " + u + " m: " + m);
 
         System.out.println("\n\n\n\n");
 
-        System.out.println((int)(Math.random()*9+1));
+        System.out.println((int) (Math.random() * 9 + 1));
 
-        String str="abcdefghijklmnopqrstuvwxyz";
+        String str = "abcdefghijklmnopqrstuvwxyz";
         System.out.println(Arrays.toString(str.split("")));
 
         System.out.println("\n\n\n\n");
 
-
-        String[] temp=new String[]{"one","two","one"};
-        Queue<String> queue=new LinkedList<>();
-        Stack<String> stack=new Stack<>();
-        for(String st : temp){
+        String[] temp = new String[]{"one", "two", "one"};
+        Queue<String> queue = new LinkedList<>();
+        Stack<String> stack = new Stack<>();
+        for (String st : temp) {
             queue.add(st);
             stack.push(st);
         }
@@ -203,8 +199,7 @@ public class Tester{
         System.out.println(queue);
         System.out.println(stack);
 
-
-        Queue<String> q=new LinkedList<>();
+        Queue<String> q = new LinkedList<>();
         q.add(null);
         System.out.println(q.toString());
     }
