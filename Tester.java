@@ -17,7 +17,7 @@ public class Tester {
 
         System.out.println("\n\n\n\n");
 
-        String s = new String();
+        String s = new String();œ
         Object o = new Object();
         System.out.println(s);
         System.out.println(o);
