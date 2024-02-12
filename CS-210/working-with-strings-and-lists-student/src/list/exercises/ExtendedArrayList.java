@@ -44,10 +44,10 @@ public class ExtendedArrayList<E> extends ArrayList<E> {
      * @param n the distance to rotate the list right
      */
     public void rotateRight(int n) {
-        int len = this.size();
+        int len = size();
         if (len > 1) {
             for (int i = 0; i < n; i++) {
-                this.add(0, this.remove(len - 1));
+                add(0, remove(len - 1));
             }
         }
     }
@@ -61,8 +61,8 @@ public class ExtendedArrayList<E> extends ArrayList<E> {
      * @param e the element to intersperse
      */
     public void intersperse(E e) {
-        for (int i = 1; i < this.size(); i += 2) {
-            this.add(i, e);
+        for (int i = 1; i < size(); i += 2) {
+            add(i, e);
         }
     }
 
