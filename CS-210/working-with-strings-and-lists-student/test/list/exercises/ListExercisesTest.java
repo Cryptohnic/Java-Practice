@@ -184,6 +184,4 @@ public class ListExercisesTest {
 		ListExercises.insertInOrder("Marc", l);
 		assertEquals(Arrays.asList("Josh", "Lisa", "Marc"), l);
 	}
-	
-	
 }
