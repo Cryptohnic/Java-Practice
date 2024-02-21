@@ -112,7 +112,8 @@ public class ListExercises {
             } else if (s.compareTo(l.get(mid)) < 0) {
                 right = mid - 1;
             } else {
-                break;
+                l.add(mid, s);
+                return;
             }
         }
         l.add(left, s);
