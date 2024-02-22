@@ -63,7 +63,7 @@ public class Assembler {
                 int currSize = firstFragment.calculateOverlap(secondFragment); // size of current overlap
                 if (currSize > 0 && currSize >= size) { // if we have a new max or equal the max
                     Fragment newCombined = firstFragment.mergedWith(secondFragment);
-                    if (currSize > size || newCombined.length() < assembled.length()) { // update our string to add if its shorter or if its the longest combination so far
+                    if (currSize > size || newCombined.length() < assembled.length()) { // update our string to add if we have a longer combo sequence or if hte sequence length is the same and the result is shorter
                         size = currSize; // update size
                         largestFirst = currLargestFirst; // update positions
                         largestSecond = currLargestSecond;
