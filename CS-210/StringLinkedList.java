@@ -1,4 +1,4 @@
-
+x
 public class StringLinkedList {
 
     private int size;

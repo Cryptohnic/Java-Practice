@@ -16,4 +16,10 @@ public class Pair<A, B> {
     public B getTwo() {
         return two;
     }
+
+    public static void main(String[] args){
+        Pair<Integer,String> p=new Pair<>(1,"Hi");
+        System.out.println(p.getOne());
+        System.out.println(p.getTwo());
+    }
 }
