@@ -1,4 +1,4 @@
-x
+
 public class StringLinkedList {
 
     private int size;
@@ -68,19 +68,7 @@ public class StringLinkedList {
         size--;
         return removed;
     }
-
-    public String get(int i) {
-        if (i < 0 || i >= size) {
-            throw new IndexOutOfBoundsException();
-        } else {
-            String pointer = head;
-            for (int x = 0; x < i; x++) {
-                pointer = pointer.next;
-            }
-            return pointer.data;
-        }
-    }
-
+    
     public String toString() {
         StringNode pointer = head;
         StringBuilder ret = new StringBuilder("[");
