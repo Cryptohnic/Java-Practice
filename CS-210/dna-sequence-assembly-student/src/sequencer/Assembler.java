@@ -56,17 +56,15 @@ public class Assembler {
             Fragment iFragment = list.get(i); // current i fragment
             for (int j = i + 1; j < list.size(); j++) { //
                 Fragment jFragment = list.get(j); // current j fragment
-                int currLargestFirst = iFragment.calculateOverlap(jFragment) > jFragment.calculateOverlap(iFragment) ? i : j; // pos of first fragment used to get the larger overlap
-                int currLargestSecond = currLargestFirst == i ? j : i; // second fragment pos from larger overlap
-                Fragment firstFragment = list.get(currLargestFirst);
-                Fragment secondFragment = list.get(currLargestSecond);
-                int currSize = firstFragment.calculateOverlap(secondFragment); // size of current overlap
+                int firstOverlap = iFragment.calculateOverlap(jFragment);
+                int secondOverlap = jFragment.calculateOverlap(iFragment);
+                int currSize = firstOverlap > secondOverlap ? firstOverlap : secondOverlap; // size of current overlap
                 if (currSize > 0 && currSize >= size) { // if we have a new max or equal the max
-                    Fragment newCombined = firstFragment.mergedWith(secondFragment);
+                    Fragment newCombined = currSize == firstOverlap ? iFragment.mergedWith(jFragment) : jFragment.mergedWith(iFragment);
                     if (currSize > size || newCombined.length() < assembled.length()) { // update our string to add if we have a longer combo sequence or if hte sequence length is the same and the result is shorter
                         size = currSize; // update size
-                        largestFirst = currLargestFirst; // update positions
-                        largestSecond = currLargestSecond;
+                        largestFirst = currSize == firstOverlap ? i : j; // update positions
+                        largestSecond = largestFirst == i ? j : i;
                         assembled = newCombined;
                     }
                 }
