@@ -85,8 +85,8 @@ public class Assembler {
      * Repeatedly assembles fragments until no more assembly can occur.
      */
     public void assembleAll() {
-        while (assembleOnce()) {
-
+        while (list.size() > 1) {
+            assembleOnce();
         }
     }
 }
