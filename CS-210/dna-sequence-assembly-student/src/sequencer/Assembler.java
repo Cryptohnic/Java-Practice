@@ -58,10 +58,10 @@ public class Assembler {
                 Fragment jFragment = list.get(j); // current j fragment
                 int firstOverlap = iFragment.calculateOverlap(jFragment);
                 int secondOverlap = jFragment.calculateOverlap(iFragment);
-                int currSize = firstOverlap > secondOverlap ? firstOverlap : secondOverlap; // size of current overlap
+                int currSize = firstOverlap > secondOverlap ? firstOverlap : secondOverlap; // pick the larger overlap
                 if (currSize > 0 && currSize >= size) { // if we have a new max or equal the max
                     Fragment newCombined = currSize == firstOverlap ? iFragment.mergedWith(jFragment) : jFragment.mergedWith(iFragment);
-                    if (currSize > size || newCombined.length() < assembled.length()) { // update our string to add if we have a longer combo sequence or if hte sequence length is the same and the result is shorter
+                    if (currSize > size || newCombined.length() < assembled.length()) { // if we have a new largest combo or we tied but length<oldLength, update string - assembled.length() will never be called if it is null
                         size = currSize; // update size
                         largestFirst = currSize == firstOverlap ? i : j; // update positions
                         largestSecond = largestFirst == i ? j : i;
