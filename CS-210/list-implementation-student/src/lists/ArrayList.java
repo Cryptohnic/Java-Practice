@@ -63,7 +63,15 @@ public class ArrayList<E> implements List<E> {
         return array[index];
     }
 
-    public void resize() {
+    private void resizeDown() {
+        E[] newArr = (E[]) new Object[array.length / 2];
+        for (int i = 0; i < size; i++) {
+            newArr[i] = array[i];
+        }
+        array = newArr;
+    }
+
+    private void resizeUp() {
         E[] newArr = (E[]) new Object[array.length * 2];
         for (int i = 0; i < size; i++) {
             newArr[i] = array[i];
@@ -74,7 +82,7 @@ public class ArrayList<E> implements List<E> {
     @Override
     public void add(E e) {
         if (size == array.length) {
-            resize();
+            resizeUp();
         }
         array[size++] = e;
     }
@@ -85,7 +93,7 @@ public class ArrayList<E> implements List<E> {
             throw new IndexOutOfBoundsException();
         }
         if (size == array.length) { // if we need more room
-            resize();
+            resizeUp();
         }
         for (int i = size++; i > index; i--) { // update the size and move everything needed up a position
             array[i] = array[i - 1];
@@ -103,6 +111,9 @@ public class ArrayList<E> implements List<E> {
             array[i] = array[i + 1];
         }
         size--;
+        if (size == array.length / 4) {
+            resizeDown();
+        }
         return removed;
     }
 
