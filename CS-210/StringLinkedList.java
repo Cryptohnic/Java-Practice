@@ -1,4 +1,5 @@
 
+
 public class StringLinkedList {
 
     private int size;
@@ -7,6 +8,15 @@ public class StringLinkedList {
     public StringLinkedList() {
         size = 0;
         head = null;
+    }
+
+    public StringLinkedList(StringNode s,int size) {
+        this.size = size;
+        head = s;
+    }
+
+    public int size(){
+        return size;
     }
 
     public String get(int i) {
@@ -25,7 +35,7 @@ public class StringLinkedList {
             head = new StringNode(s);
         } else {
             StringNode pointer = head;
-            while (pointer.next != null) {
+            for(int i=0;i<size-1;i++) {
                 pointer = pointer.next;
             }
             pointer.next = new StringNode(s);
@@ -67,19 +77,41 @@ public class StringLinkedList {
         }
         size--;
         return removed;
+    } 
+
+    public void reverse(){
+        StringNode current=head;
+        StringNode next=head.next;
+        StringNode prev=null;
+        while(current!=null){
+            current.next=prev;
+            prev=current;
+            current=next;
+            if(next!=null)
+                next=next.next;
+        }
+        head=prev;
     }
-    
+
+    public StringLinkedList reversed(){
+        return new StringLinkedList(reversed(new StringNode(head.data,head.next),null),size);
+    }
+
+    public StringNode reversed(StringNode node, StringNode rev){
+        if(node==null)
+            return rev;
+        return reversed(node.next,new StringNode(node.data,rev));
+    }
+
     public String toString() {
         StringNode pointer = head;
         StringBuilder ret = new StringBuilder("[");
-        while (pointer != null) {
+        for(int i=0;i<size;i++){
             ret.append(pointer.data);
-            if (pointer.next != null) {
-                ret.append(", ");
-            }
+            ret.append(", ");
             pointer = pointer.next;
         }
-        return ret.toString() + ']';
+        return ret.toString().substring(0,ret.toString().length()-2) + ']';
     }
 
     public static void main(String[] args) {
@@ -92,10 +124,10 @@ public class StringLinkedList {
         System.out.println(l.get(1));
         l.add(2, "Test");
         System.out.println(l);
-        System.out.println(l.remove(2));
-        System.out.println(l);
-        System.out.println(l.remove(0));
-        System.out.println(l);
         System.out.println(l.get(0));
+        System.out.println(l);
+        System.out.println(l.reversed());
+        l.reverse();
+        System.out.println(l);
     }
 }

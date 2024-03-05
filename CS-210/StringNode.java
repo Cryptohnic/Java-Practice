@@ -4,6 +4,11 @@ public class StringNode {
     String data;
     StringNode next;
 
+
+    public StringNode() {
+        this.data = data;
+        next = null;
+    }
     public StringNode(String data) {
         this.data = data;
         next = null;
