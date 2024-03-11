@@ -3,8 +3,6 @@
  */
 package lists;
 
-import com.sun.source.doctree.SerialFieldTree;
-
 public class LinkedList<E> implements List<E> {
 
     // Note: do not declare any additional instance variables
