@@ -81,11 +81,11 @@ public class SearchEngine {
 				sCount = new HashMap<>();
 				sCount.put(s, 1);
 				dsi.put(documentId, sCount);
-			} else if (!sCount.containsKey(s)) // if the document exists, add the word if it hasn't been read before in
-												// this doc
+			} else if (!sCount.containsKey(s)) { // if the document exists, add the word if it hasn't been read before
 				sCount.put(s, 1);
-			else // if this word has already been read in this document, increment the count
+			} else { // if this word has already been read in this document, increment the count
 				sCount.put(s, sCount.get(s) + 1);
+			}
 		}
 	}
 
@@ -117,7 +117,7 @@ public class SearchEngine {
 	public int termFrequency(DocumentId documentId, String term) throws IllegalArgumentException {
 		if (!dsi.containsKey(documentId)) // if we don't have the documentId, throw Exception
 			throw new IllegalArgumentException();
-		return dsi.get(documentId).getOrDefault(term, 0); // return the amount of times the word appeared in the document
+		return dsi.get(documentId).getOrDefault(term, 0); // return the amount of times the word appeared
 	}
 
 	/**
