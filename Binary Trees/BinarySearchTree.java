@@ -2,8 +2,8 @@
 //www.apluscompsci.com
 
 import static java.lang.System.out;
-import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinarySearchTree {
 
@@ -49,7 +49,7 @@ public class BinarySearchTree {
         out.println("\n\n");
     }
 
-    private void preOrder(TreeNode tree) { // returns the values in a possible arrangement of how they were added
+    private void preOrder(TreeNode tree) { // print all down left - when no more left go right
         if (tree != null) {
             out.print(tree.getValue() + " ");
             preOrder(tree.getLeft());
