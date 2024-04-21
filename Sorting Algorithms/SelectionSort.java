@@ -6,7 +6,7 @@ public class SelectionSort {
 
     private static int passCount;
 
-    public static void sort(Comparable[] list) { //O(N^2)
+    public static <T extends Comparable<T>> void sort(T[] list) { //O(N^2)
         passCount = 0;
         out.println("pass " + passCount++ + " " + Arrays.toString(list));
         for (int i = 0; i < list.length - 1; i++) {
@@ -18,7 +18,7 @@ public class SelectionSort {
                     min = j;
                 }
             }
-            Comparable temp = list[min]; // swap with smaller value
+            T temp = list[min]; // swap with smaller value
             list[min] = list[i];
             list[i] = temp;
             out.println("pass " + passCount++ + " " + Arrays.toString(list));

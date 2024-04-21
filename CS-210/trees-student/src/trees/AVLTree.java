@@ -3,8 +3,6 @@
  */
 package trees;
 
-import javax.crypto.NullCipher;
-
 /**
  * A (partial) implementation of AVL tree. You'll need to complete the rotations
  * to make insertion work. This project doesn't require you to implement

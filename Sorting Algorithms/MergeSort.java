@@ -7,7 +7,7 @@ public class MergeSort {
 
     private static int passCount;
 
-    public static void mergeSort(Comparable[] list) {  // O(Nlog(N))
+    public static <T extends Comparable<T>> void mergeSort(T[] list) {  // O(Nlog(N))
         passCount = 0;
         out.println("pass " + passCount++ + " " + Arrays.toString(list));
         int subSize = 2;
@@ -27,8 +27,8 @@ public class MergeSort {
         }
     }
 
-    private static void merge(Comparable[] list, int left, int mid, int right) {  // O(N)
-        Comparable[] temp = Arrays.copyOfRange(list, left, right + 1);
+    private static <T extends Comparable<T>> void merge(T[] list, int left, int mid, int right) {  // O(N)
+        T[] temp = Arrays.copyOfRange(list, left, right + 1);
         int i = 0, j = mid - left + 1, k = left;
         while (i <= mid - left && j <= right - left) {
             if (temp[i].compareTo(temp[j]) < 0) {

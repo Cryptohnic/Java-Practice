@@ -358,6 +358,82 @@ public class TreeUtilitiesTest {
     }
 
     @Test
+    public void testSizeEmpty() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        assertEquals(TreeUtilities.size(tree), 0);
+    }
+
+    @Test
+    public void testSizeOne() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(5);
+        assertEquals(TreeUtilities.size(tree), 1);
+    }
+
+    @Test
+    public void testSizeFive() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(5);
+        tree.add(12);
+        tree.add(6);
+        tree.add(-10);
+        tree.add(-11);
+        assertEquals(TreeUtilities.size(tree), 5);
+    }
+
+    @Test
+    public void testSizeMany() throws Exception {
+        BinarySearchTree<Integer> tree;
+        for (int i = 0; i < 100; i++) {
+            int num = (int) (Math.random() * 10 + 1);
+            tree = new BinarySearchTree<>();
+            for (int j = 0; j < num; j++) {
+                tree.add(j);
+            }
+            assertEquals(TreeUtilities.size(tree), num);
+        }
+    }
+
+    @Test
+    public void testFindDataRoot() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(5);
+        assertEquals(TreeUtilities.findData(tree, 5), (Integer) 5);
+    }
+
+    @Test
+    public void testFindDataRight() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(5);
+        tree.add(6);
+        tree.add(10);
+        assertEquals(TreeUtilities.findData(tree, 10), (Integer) 10);
+    }
+
+    @Test
+    public void testFindDataLeft() throws Exception {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(5);
+        tree.add(6);
+        tree.add(10);
+        tree.add(1);
+        assertEquals(TreeUtilities.findData(tree, 1), (Integer) 1);
+    }
+
+    @Test
+    public void testSizeMany() throws Exception {
+        BinarySearchTree<Integer> tree;
+        for (int i = 0; i < 100; i++) {
+            int num = (int) (Math.random() * 10 + 1);
+            tree = new BinarySearchTree<>();
+            for (int j = 0; j < num; j++) {
+                tree.add(j);
+            }
+            assertEquals(tree.size(), num);
+        }
+    }
+
+    @Test
     public void testIsAVLTreeWarning() throws Exception {
         fail("This test is intended to fail. Read the comment and then comment out this test.");
         // We are not providing you with exhaustive tests for your isAVLTree code.

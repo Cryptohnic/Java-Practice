@@ -6,7 +6,7 @@ public class InsertionSort {
 
     private static int passCount;
 
-    public static void sort(Comparable[] list) {
+    public static <T extends Comparable<T>> void sort(T[] list) {
         passCount = 0;
         int n = list.length;
         out.println("pass " + passCount++ + " " + Arrays.toString(list));
@@ -14,7 +14,7 @@ public class InsertionSort {
             if (list[i].compareTo(list[i - 1]) < 0) { // if the current val is less than behind itself
                 int j = i;
                 do {
-                    Comparable temp = list[j];
+                    T temp = list[j];
                     list[j] = list[j - 1];
                     list[--j] = temp;
                 } while (j > 0 && list[j].compareTo(list[j - 1]) < 0); // swap it back until it is at its position

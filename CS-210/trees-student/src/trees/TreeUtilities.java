@@ -48,6 +48,9 @@ public class TreeUtilities {
         if (n == null) {
             return -1;
         }
+        if (n.left == null && n.right == null) {
+            return 0;
+        }
         return 1 + Math.max(height(n.left), height(n.right));
     }
 
@@ -63,6 +66,17 @@ public class TreeUtilities {
         List<E> sorted = inOrder(bst.root);
         BinarySearchTree<E> balanced = new BinarySearchTree<>();
         return intoBalanced(balanced, sorted, 0, sorted.size() - 1);
+    }
+
+    static <E extends Comparable<E>> int size(BinarySearchTree<E> n) {
+        return size(n.root);
+    }
+
+    private static <E extends Comparable<E>> int size(Node<E> n) {
+        if (n == null) {
+            return 0;
+        }
+        return 1 + size(n.left) + size(n.right);
     }
 
     private static <E extends Comparable<E>> BinarySearchTree<E> intoBalanced(BinarySearchTree<E> balanced, List<E> sorted, int left, int right) {
@@ -112,7 +126,7 @@ public class TreeUtilities {
      * @returntrue iff the tree rooted at n is an AVL tree
      */
     static <E extends Comparable<E>> boolean isAVLTree(Node<E> n) {
-        if (n == null) {
+        if (n == null || n.left == null && n.right == null) {
             return true;
         }
         if (Math.abs(height(n.right) - height(n.left)) > 1) {
@@ -140,5 +154,20 @@ public class TreeUtilities {
         } else {
             return n.data.equals(m.data) && equalSubtrees(n.left, m.left) && equalSubtrees(n.right, m.right);
         }
+    }
+
+    static <E extends Comparable<E>> E findData(BinarySearchTree<E> bst, E data) {
+        Node<E> node = bst.root;
+        while (node != null) {
+            if (data.equals(node.data)) {
+                return node.data;
+            }
+            if (data.compareTo(node.data) > 0) {
+                node = node.right;
+            } else {
+                node = node.left;
+            }
+        }
+        return null;
     }
 }
