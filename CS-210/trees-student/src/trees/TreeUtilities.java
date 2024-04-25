@@ -132,7 +132,7 @@ public class TreeUtilities {
         if (Math.abs(height(n.right) - height(n.left)) > 1) {
             return false;
         }
-        return isAVLTree(n.left) && isAVLTree(n.right);
+        return isAVLTree(n.left) && isAVLTree(n.right) && isBST(n.left) && isBST(n.right);
     }
 
     /**

@@ -142,7 +142,6 @@ public class Treap<E extends Comparable<E>> {
                 node.left = new Node<>(e, node);
                 size++;
                 rotateUp(node.left);
-                return;
             } else {
                 add(e, node.left);
             }
@@ -151,7 +150,6 @@ public class Treap<E extends Comparable<E>> {
                 node.right = new Node<>(e, node);
                 size++;
                 rotateUp(node.right);
-                return;
             } else {
                 add(e, node.right);
             }
@@ -246,8 +244,8 @@ public class Treap<E extends Comparable<E>> {
     public static void main(String[] args) {
         Treap<Integer> t = new Treap<>();
 
-        for (int i = 0; i < 15; i++) {
-            t.add(i);
+        for (int i = 0; i < 10; i++) {
+            t.add(i);zsx
             TreePrinter.print(t.root);
             System.out.println(isBST(t.root) + "/" + isHeap(t.root));
         }

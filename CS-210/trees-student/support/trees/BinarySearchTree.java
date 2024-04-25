@@ -28,7 +28,6 @@ public class BinarySearchTree<E extends Comparable<E>> {
             if (node.left == null) {
                 node.left = new Node<>(e, node);
                 size++;
-                return;
             } else {
                 add(e, node.left);
             }
@@ -36,7 +35,6 @@ public class BinarySearchTree<E extends Comparable<E>> {
             if (node.right == null) {
                 node.right = new Node<>(e, node);
                 size++;
-                return;
             } else {
                 add(e, node.right);
             }
@@ -73,7 +71,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
         }
 
         Node<E> subNode, newParent;
-        if (n.left != null) { // if the left subnode is not not null, that's the one we're going
+        if (n.left != null) { // if the left subnode is not null, that's the one we're going
                               // to "slide up" or splice into place
             subNode = n.left;
         } else { // otherwise it's the right subnode we're going to slide up
@@ -84,7 +82,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
 
         if (n == root) { // special case, n is the root
             root = subNode;
-            //newParent = null;
+            newParent = null;
         } else {
             newParent = n.parent;
             // now do the slide up
@@ -127,5 +125,17 @@ public class BinarySearchTree<E extends Comparable<E>> {
         }
         size--;
     }
-
+    public static void main(String[] args){
+        BinarySearchTree<Integer> bst=new BinarySearchTree<>();
+        bst.add(2);
+        bst.add(6);
+        bst.add(7);
+        bst.add(5);
+        bst.add(3);
+        bst.add(4);
+        bst.add(1);
+        TreePrinter.print(bst.root);
+        bst.remove(2);
+        TreePrinter.print(bst.root);
+    }
 }

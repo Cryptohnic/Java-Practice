@@ -79,7 +79,7 @@ public class ChainingHashTable<E> implements HashTable<E> {
         int position = e.hashCode() % capacity();
         boolean removed = false;
         if (hashtable[position] == null) {
-            hashtable[position] = new LinkedList<E>();
+            hashtable[position] = new LinkedList<>();
         } else {
             removed = remove(e);
         }
