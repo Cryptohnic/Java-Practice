@@ -3,8 +3,6 @@
  */
 package sorting;
 
-import static org.junit.Assert.fail;
-
 import java.util.Arrays;
 
 public class SortingExercises {
@@ -54,49 +52,29 @@ public class SortingExercises {
      * less than 10.
      */
     public static void mergeSort(double[] a) {
-        mergeSort(a,0,a.length);
-    }
-
-    private static void mergeSort(double[] a, int start, int end) {
-        if (start + 1 >= end) {
+        if (a.length<2) {
             return;
         }
-        if (end - start < 10) {
-            insertionSort(a, start, end);
+        if (a.length<10) {
+            insertionSort(a);
             return;
         }
-        int mid = (start + end) / 2;
-        mergeSort(a, start, mid);
-        mergeSort(a, mid, end);
-        merge(a, start, Arrays.copyOfRange(a, start, mid), Arrays.copyOfRange(a, mid, end));
-    }
-
-    private static int indexOf(double[] parent, double[] arr) {
-        int i = 0;
-        while (i + arr.length < parent.length) {
-            while(i+arr.length<parent.length && parent[i]!=arr[0])
-                i++;
-            boolean failed=false;
-            for (int x = 0; x < arr.length; x++,i++) {
-                if (parent[i] != arr[x]) {
-                    failed=true;
-                    break;
-                }
-            }
-            if(!failed)
-                return i-arr.length;
-        }
-        return -1;
+        int mid=(a.length-1)/2;
+        double[] left=Arrays.copyOfRange(a,0,mid);
+        double[] right=Arrays.copyOfRange(a,mid,a.length);
+        mergeSort(left);
+        mergeSort(right);
+        merge(a,left,right);
     }
 
     /**
      * Merge the sorted arrays l and r into the array a (overwriting its
      * previous contents).
      */
-    static void merge(double[] a,int start, double[] l, double[] r) {
+    static void merge(double[] a, double[] l, double[] r) {
         int x = 0;
         int y = 0;
-        int i = start;
+        int i = 0;
         while (x < l.length && y < r.length) {
             if (l[x] < r[y]) {
                 a[i++] = l[x++];
@@ -166,8 +144,8 @@ public class SortingExercises {
         System.out.println(Arrays.toString(test));
 
         for (int x = 0; x < 20; x++) {
-            double[] a = new double[9];
-            for (int i = 0; i < 9; i++) {
+            double[] a = new double[20];
+            for (int i = 0; i < 20; i++) {
                 a[i] = Math.floor(Math.random() * 10 + 1);
             }
             double[] b = Arrays.copyOf(a, a.length);
@@ -175,11 +153,5 @@ public class SortingExercises {
             Arrays.sort(b);
             System.out.println(Arrays.toString(a) + " " + Arrays.toString(b) + " " + Arrays.equals(a, b));
         }
-
-        System.out.println("\n\n");
-
-        double[] arr=new double[]{1,2,3,4,5};
-        double[] arr1=new double[]{3,4,5};
-        System.out.println(indexOf(arr, arr1));
     }
 }

@@ -4,8 +4,8 @@ public class TreeNode<E> {
     public TreeNode<E> right;
 
     public TreeNode(){
-        ;
     }
+    
     public TreeNode(E data){
         this.data=data;
     }
