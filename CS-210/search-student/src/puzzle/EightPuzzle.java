@@ -6,7 +6,6 @@ package puzzle;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import search.SearchProblem;
 import search.Searcher;
